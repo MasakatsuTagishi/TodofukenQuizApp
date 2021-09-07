@@ -12,6 +12,9 @@
 		07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C27126DE080F00C21DA5 /* SoundFile.swift */; };
 		07B1C27426DE08B900C21DA5 /* CorrectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */; };
 		07B1C27626DE08C500C21DA5 /* WrongSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */; };
+		07B1C28326E7090400C21DA5 /* AreaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28126E7090400C21DA5 /* AreaCell.swift */; };
+		07B1C28426E7090400C21DA5 /* AreaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C28226E7090400C21DA5 /* AreaCell.xib */; };
+		07B1C28626E729F200C21DA5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28526E729F200C21DA5 /* HomeViewController.swift */; };
 		07EC194226D4E68800B44A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194126D4E68800B44A55 /* AppDelegate.swift */; };
 		07EC194426D4E68800B44A55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194326D4E68800B44A55 /* SceneDelegate.swift */; };
 		07EC194626D4E68800B44A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194526D4E68800B44A55 /* ViewController.swift */; };
@@ -26,6 +29,9 @@
 		07B1C27126DE080F00C21DA5 /* SoundFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFile.swift; sourceTree = "<group>"; };
 		07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectSound.mp3; sourceTree = "<group>"; };
 		07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongSound.mp3; sourceTree = "<group>"; };
+		07B1C28126E7090400C21DA5 /* AreaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCell.swift; sourceTree = "<group>"; };
+		07B1C28226E7090400C21DA5 /* AreaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaCell.xib; sourceTree = "<group>"; };
+		07B1C28526E729F200C21DA5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		07EC193E26D4E68800B44A55 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC194126D4E68800B44A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07EC194326D4E68800B44A55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 				07EC194126D4E68800B44A55 /* AppDelegate.swift */,
 				07EC194326D4E68800B44A55 /* SceneDelegate.swift */,
 				07EC194526D4E68800B44A55 /* ViewController.swift */,
+				07B1C28526E729F200C21DA5 /* HomeViewController.swift */,
+				07B1C28126E7090400C21DA5 /* AreaCell.swift */,
+				07B1C28226E7090400C21DA5 /* AreaCell.xib */,
 				07EC194726D4E68800B44A55 /* Main.storyboard */,
 				07EC194A26D4E68A00B44A55 /* Assets.xcassets */,
 				07EC194C26D4E68A00B44A55 /* LaunchScreen.storyboard */,
@@ -141,6 +150,7 @@
 			files = (
 				07B1C27426DE08B900C21DA5 /* CorrectSound.mp3 in Resources */,
 				07EC194E26D4E68A00B44A55 /* LaunchScreen.storyboard in Resources */,
+				07B1C28426E7090400C21DA5 /* AreaCell.xib in Resources */,
 				07EC194B26D4E68A00B44A55 /* Assets.xcassets in Resources */,
 				07EC194926D4E68800B44A55 /* Main.storyboard in Resources */,
 				07B1C27626DE08C500C21DA5 /* WrongSound.mp3 in Resources */,
@@ -156,6 +166,8 @@
 			files = (
 				07EC194626D4E68800B44A55 /* ViewController.swift in Sources */,
 				07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */,
+				07B1C28326E7090400C21DA5 /* AreaCell.swift in Sources */,
+				07B1C28626E729F200C21DA5 /* HomeViewController.swift in Sources */,
 				0714E89326DA76F50032AC39 /* ImagesList.swift in Sources */,
 				07EC194226D4E68800B44A55 /* AppDelegate.swift in Sources */,
 				07EC194426D4E68800B44A55 /* SceneDelegate.swift in Sources */,

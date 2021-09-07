@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         imageView.image = UIImage(named: random.kinkiText)
     }
     
-    
     @IBAction func answerSwitching(_ sender: Any) {
         tapCount = tapCount + 1
         if tapCount % 2 != 0{
@@ -48,8 +47,9 @@ class ViewController: UIViewController {
 //        print(wrongCount)
         //不正解のときの音を鳴らす
         soundFile.playSound(fileName: "WrongSound", extentionName: "mp3")
-        //imegeViewのimageをランダム表示
+        //imegeViewのimageをランダム表示（次の問題を表示）
         nextQuestions()
+        //答えを非表示にする
         changeVisible(visible: false)
     }
     
@@ -60,8 +60,9 @@ class ViewController: UIViewController {
 //        print(correctCount)
         //正解のときの音を鳴らす
         soundFile.playSound(fileName: "CorrectSound", extentionName: "mp3")
-        //imegeViewのimageをランダム表示
+        //imegeViewのimageをランダム表示（次の問題を表示）
         nextQuestions()
+        //答えを非表示にする
         changeVisible(visible: false)
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yUK-ev-juP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0cZ-lw-wh5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第１問" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C64-fr-wYm">
-                                <rect key="frame" x="20" y="108" width="76" height="30"/>
+                                <rect key="frame" x="20" y="64" width="76" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7WQ-Ja-Cqw">
-                                <rect key="frame" x="5" y="158" width="404" height="561"/>
+                                <rect key="frame" x="5" y="114" width="404" height="605"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="izy-uS-zKy" appends="YES" id="U2F-Km-nRq"/>
@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="答え" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWa-zH-4lv">
-                                <rect key="frame" x="343" y="108" width="51" height="30"/>
+                                <rect key="frame" x="343" y="64" width="51" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -108,25 +108,66 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1076.8115942028987" y="124.55357142857142"/>
+            <point key="canvasLocation" x="1177" y="125"/>
+        </scene>
+        <!--都道府県フラッシュカード-->
+        <scene sceneID="fLd-q1-KAz">
+            <objects>
+                <viewController id="y9h-Wj-qoj" customClass="HomeViewController" customModule="FlashCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eTH-0n-GWV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jOK-da-jo6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="areaCell" rowHeight="92" id="tF8-XM-3oX" customClass="AreaCell" customModule="FlashCard">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="92"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tF8-XM-3oX" id="2zD-oX-ogQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qKw-fG-PKD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jOK-da-jo6" firstAttribute="top" secondItem="qKw-fG-PKD" secondAttribute="top" id="9up-4u-yI2"/>
+                            <constraint firstItem="jOK-da-jo6" firstAttribute="leading" secondItem="qKw-fG-PKD" secondAttribute="leading" id="R0E-tG-uFY"/>
+                            <constraint firstAttribute="bottom" secondItem="jOK-da-jo6" secondAttribute="bottom" id="efD-hU-dsE"/>
+                            <constraint firstItem="jOK-da-jo6" firstAttribute="trailing" secondItem="qKw-fG-PKD" secondAttribute="trailing" id="mcI-Qh-N7C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="都道府県フラッシュカード" id="HXv-KM-30K"/>
+                    <connections>
+                        <outlet property="tableView" destination="jOK-da-jo6" id="19w-RJ-f6f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRK-DX-2Vv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="331.8840579710145" y="124.55357142857142"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="tZX-Qm-CXZ">
+        <scene sceneID="baJ-pM-UhR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yUK-ev-juP" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0cZ-lw-wh5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jT1-tG-kcl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rvm-Xd-lKJ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="a47-pn-yOY"/>
+                        <segue destination="y9h-Wj-qoj" kind="relationship" relationship="rootViewController" id="NgT-Vv-U1a"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U2v-7f-6gD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cmO-8X-1Be" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168.11594202898553" y="125.22321428571428"/>
+            <point key="canvasLocation" x="-578.26086956521749" y="124.55357142857142"/>
         </scene>
     </scenes>
     <resources>
