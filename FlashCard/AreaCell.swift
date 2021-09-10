@@ -16,7 +16,7 @@ class AreaCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 //        self.layer.shadowOffset = CGSize(width: 2, height: 4)
-////        self.layer.shadowRadius = 10.0
+//        self.layer.shadowRadius = 10.0
 //        self.layer.shadowOpacity = 0.5
     }
 

@@ -17,26 +17,37 @@ class ViewController: UIViewController {
     var questionCount = 0
     var wrongCount = 0
     var correctCount = 0
-    var tapCount = 2
+    var visible:Bool = false
+    var listNumber = Int()
     
     let imagesFile = ImagesFile()
     let soundFile = SoundFile()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let random = imagesFile.kinkiList.randomElement()!
+//        let area = Area()
+//        let todohuken = area.hokkaidoTohoku.randomElement()
+//        answerLabel.text = todohuken?.name
+//        imageView.image = todohuken?.image
+        
+        
+        let random = imagesFile.areaArray[listNumber].randomElement()
         countLabel.text = "第\(questionNamber)問"
         changeVisible(visible: false)
-        answerLabel.text = random.kinkiText
-        imageView.image = UIImage(named: random.kinkiText)
+        answerLabel.text = random?.areaText
+//        print("tagi")
+//        print(answerLabel.text as Any)
+        imageView.image = UIImage(named: random!.areaAnswer)
     }
     
     @IBAction func answerSwitching(_ sender: Any) {
-        tapCount = tapCount + 1
-        if tapCount % 2 != 0{
-            changeVisible(visible: true)
+        if visible {
+            visible = false
+            changeVisible(visible: visible)
         }else{
-            changeVisible(visible: false)
+            visible = true
+            changeVisible(visible: visible)
         }
     }
     
@@ -44,7 +55,8 @@ class ViewController: UIViewController {
         //×ボタンが押されたとき
         //不正解カウントを+1
         wrongCount = wrongCount + 1
-//        print(wrongCount)
+        print("不正解")
+        print(wrongCount)
         //不正解のときの音を鳴らす
         soundFile.playSound(fileName: "WrongSound", extentionName: "mp3")
         //imegeViewのimageをランダム表示（次の問題を表示）
@@ -57,7 +69,8 @@ class ViewController: UIViewController {
         //○ボタンが押されたとき
         //正解カウントを+1
         correctCount = correctCount + 1
-//        print(correctCount)
+        print("正解")
+        print(correctCount)
         //正解のときの音を鳴らす
         soundFile.playSound(fileName: "CorrectSound", extentionName: "mp3")
         //imegeViewのimageをランダム表示（次の問題を表示）
@@ -67,24 +80,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sendButton(_ sender: Any) {
-        
+    //結果送信ボタン
         
         
     }
     
     func nextQuestions() {
-        let random = imagesFile.kinkiList.randomElement()!
+        let random = imagesFile.areaArray[listNumber].randomElement()
         if questionNamber < 50 {
             questionNamber = questionNamber + 1
             questionCount = questionCount + 1
+            print("問題数")
+            print(questionCount)
             countLabel.text = "第\(questionNamber)問"
-            imageView.image = UIImage(named: random.kinkiText)
-            answerLabel.text = random.kinkiAnswer
-            print(answerLabel.text!)
-            tapCount = 2
+            imageView.image = UIImage(named: random!.areaText)
+            answerLabel.text = random?.areaText
+//            print(answerLabel.text!)
+            visible = false
         } else {
             print("問題が終了しました")
             //ランキング画面に遷移をさせる
+            
         }
     }
     
@@ -94,7 +110,7 @@ class ViewController: UIViewController {
         } else {
             answerLabel.isHidden = true
         }
-      }
+    }
     
 }
 

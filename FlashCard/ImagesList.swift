@@ -9,12 +9,12 @@ import Foundation
 
 class ImagesList {
     
-    let kinkiText:String
-    let kinkiAnswer:String
+    let areaText:String
+    let areaAnswer:String
     
     init(ImageName:String, Answer:String) {
-        kinkiText = ImageName
-        kinkiAnswer = Answer
+        areaText = ImageName
+        areaAnswer = Answer
     }
     
 }

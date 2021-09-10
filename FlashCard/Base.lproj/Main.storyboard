@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlashCard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewVC" id="BYZ-38-t0r" customClass="ViewController" customModule="FlashCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,13 +35,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIf-dd-qE7">
                                 <rect key="frame" x="5" y="807" width="404" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WpA-Rb-16Q"/>
                                 </constraints>
-                                <state key="normal" title="結果を送信する">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <state key="normal" title="結果を送信する"/>
                                 <connections>
                                     <action selector="sendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ctm-H1-xqj"/>
                                 </connections>
@@ -110,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="1177" y="125"/>
         </scene>
-        <!--都道府県フラッシュカード-->
+        <!--Home-->
         <scene sceneID="fLd-q1-KAz">
             <objects>
                 <viewController id="y9h-Wj-qoj" customClass="HomeViewController" customModule="FlashCard" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,7 +140,7 @@
                             <constraint firstItem="jOK-da-jo6" firstAttribute="trailing" secondItem="qKw-fG-PKD" secondAttribute="trailing" id="mcI-Qh-N7C"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="都道府県フラッシュカード" id="HXv-KM-30K"/>
+                    <navigationItem key="navigationItem" title="Home" id="HXv-KM-30K"/>
                     <connections>
                         <outlet property="tableView" destination="jOK-da-jo6" id="19w-RJ-f6f"/>
                     </connections>
