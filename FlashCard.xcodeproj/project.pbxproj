@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,12 +17,20 @@
 		07B1C28626E729F200C21DA5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28526E729F200C21DA5 /* HomeViewController.swift */; };
 		07B1C28826E8850100C21DA5 /* AreaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28726E8850100C21DA5 /* AreaList.swift */; };
 		07B1C28A26E886CA00C21DA5 /* AreaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28926E886CA00C21DA5 /* AreaFile.swift */; };
+		07B1C28E26EC683500C21DA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C28D26EC683500C21DA5 /* GoogleService-Info.plist */; };
+		07B1C29026EC792700C21DA5 /* LoadDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28F26EC792700C21DA5 /* LoadDBModel.swift */; };
+		07B1C29426ECDFA000C21DA5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C29326ECDFA000C21DA5 /* LoginViewController.swift */; };
+		07B1C29826EDAB0F00C21DA5 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */; };
+		07B1C29F26EDB65300C21DA5 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C29D26EDB65300C21DA5 /* ScoreCell.swift */; };
+		07B1C2A026EDB65300C21DA5 /* ScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C29E26EDB65300C21DA5 /* ScoreCell.xib */; };
+		07B1C2A226F0511200C21DA5 /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A126F0511200C21DA5 /* DataSet.swift */; };
 		07EC194226D4E68800B44A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194126D4E68800B44A55 /* AppDelegate.swift */; };
 		07EC194426D4E68800B44A55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194326D4E68800B44A55 /* SceneDelegate.swift */; };
 		07EC194626D4E68800B44A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194526D4E68800B44A55 /* ViewController.swift */; };
 		07EC194926D4E68800B44A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EC194726D4E68800B44A55 /* Main.storyboard */; };
 		07EC194B26D4E68A00B44A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC194A26D4E68A00B44A55 /* Assets.xcassets */; };
 		07EC194E26D4E68A00B44A55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EC194C26D4E68A00B44A55 /* LaunchScreen.storyboard */; };
+		EC9182A9189FDB8A567C963D /* Pods_FlashCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D0AEAEB0670C0189467E98 /* Pods_FlashCard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +44,13 @@
 		07B1C28526E729F200C21DA5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		07B1C28726E8850100C21DA5 /* AreaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaList.swift; sourceTree = "<group>"; };
 		07B1C28926E886CA00C21DA5 /* AreaFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaFile.swift; sourceTree = "<group>"; };
+		07B1C28D26EC683500C21DA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		07B1C28F26EC792700C21DA5 /* LoadDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDBModel.swift; sourceTree = "<group>"; };
+		07B1C29326ECDFA000C21DA5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		07B1C29D26EDB65300C21DA5 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
+		07B1C29E26EDB65300C21DA5 /* ScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCell.xib; sourceTree = "<group>"; };
+		07B1C2A126F0511200C21DA5 /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
 		07EC193E26D4E68800B44A55 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC194126D4E68800B44A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07EC194326D4E68800B44A55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +59,9 @@
 		07EC194A26D4E68A00B44A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07EC194D26D4E68A00B44A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07EC194F26D4E68A00B44A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D0AEAEB0670C0189467E98 /* Pods_FlashCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D6D5509E3F916A4040738D5 /* Pods-FlashCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.release.xcconfig"; path = "Target Support Files/Pods-FlashCard/Pods-FlashCard.release.xcconfig"; sourceTree = "<group>"; };
+		A7A2BA373CC432B5E87413C1 /* Pods-FlashCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.debug.xcconfig"; path = "Target Support Files/Pods-FlashCard/Pods-FlashCard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9182A9189FDB8A567C963D /* Pods_FlashCard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +81,8 @@
 			children = (
 				07EC194026D4E68800B44A55 /* FlashCard */,
 				07EC193F26D4E68800B44A55 /* Products */,
+				F5339C13F10B0C4130F19AFB /* Pods */,
+				9B9B03B0DE9C1836CA1BDF9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,10 +99,16 @@
 			children = (
 				07EC194126D4E68800B44A55 /* AppDelegate.swift */,
 				07EC194326D4E68800B44A55 /* SceneDelegate.swift */,
+				07B1C28F26EC792700C21DA5 /* LoadDBModel.swift */,
+				07B1C2A126F0511200C21DA5 /* DataSet.swift */,
 				07EC194526D4E68800B44A55 /* ViewController.swift */,
+				07B1C29326ECDFA000C21DA5 /* LoginViewController.swift */,
+				07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */,
 				07B1C28526E729F200C21DA5 /* HomeViewController.swift */,
 				07B1C28126E7090400C21DA5 /* AreaCell.swift */,
 				07B1C28226E7090400C21DA5 /* AreaCell.xib */,
+				07B1C29D26EDB65300C21DA5 /* ScoreCell.swift */,
+				07B1C29E26EDB65300C21DA5 /* ScoreCell.xib */,
 				07EC194726D4E68800B44A55 /* Main.storyboard */,
 				07EC194A26D4E68A00B44A55 /* Assets.xcassets */,
 				07EC194C26D4E68A00B44A55 /* LaunchScreen.storyboard */,
@@ -93,8 +120,26 @@
 				07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */,
 				07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */,
 				07EC194F26D4E68A00B44A55 /* Info.plist */,
+				07B1C28D26EC683500C21DA5 /* GoogleService-Info.plist */,
 			);
 			path = FlashCard;
+			sourceTree = "<group>";
+		};
+		9B9B03B0DE9C1836CA1BDF9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28D0AEAEB0670C0189467E98 /* Pods_FlashCard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5339C13F10B0C4130F19AFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7A2BA373CC432B5E87413C1 /* Pods-FlashCard.debug.xcconfig */,
+				4D6D5509E3F916A4040738D5 /* Pods-FlashCard.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07EC195226D4E68A00B44A55 /* Build configuration list for PBXNativeTarget "FlashCard" */;
 			buildPhases = (
+				B161FD606BE1467CDE5FEDDD /* [CP] Check Pods Manifest.lock */,
 				07EC193A26D4E68800B44A55 /* Sources */,
 				07EC193B26D4E68800B44A55 /* Frameworks */,
 				07EC193C26D4E68800B44A55 /* Resources */,
+				57F26C70A814C5B236050ACE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,14 +203,58 @@
 			files = (
 				07B1C27426DE08B900C21DA5 /* CorrectSound.mp3 in Resources */,
 				07EC194E26D4E68A00B44A55 /* LaunchScreen.storyboard in Resources */,
+				07B1C2A026EDB65300C21DA5 /* ScoreCell.xib in Resources */,
 				07B1C28426E7090400C21DA5 /* AreaCell.xib in Resources */,
 				07EC194B26D4E68A00B44A55 /* Assets.xcassets in Resources */,
 				07EC194926D4E68800B44A55 /* Main.storyboard in Resources */,
+				07B1C28E26EC683500C21DA5 /* GoogleService-Info.plist in Resources */,
 				07B1C27626DE08C500C21DA5 /* WrongSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57F26C70A814C5B236050ACE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlashCard/Pods-FlashCard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlashCard/Pods-FlashCard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlashCard/Pods-FlashCard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B161FD606BE1467CDE5FEDDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashCard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		07EC193A26D4E68800B44A55 /* Sources */ = {
@@ -171,7 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				07EC194626D4E68800B44A55 /* ViewController.swift in Sources */,
+				07B1C29826EDAB0F00C21DA5 /* ScoreViewController.swift in Sources */,
+				07B1C2A226F0511200C21DA5 /* DataSet.swift in Sources */,
+				07B1C29026EC792700C21DA5 /* LoadDBModel.swift in Sources */,
 				07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */,
+				07B1C29F26EDB65300C21DA5 /* ScoreCell.swift in Sources */,
 				07B1C28326E7090400C21DA5 /* AreaCell.swift in Sources */,
 				07B1C28626E729F200C21DA5 /* HomeViewController.swift in Sources */,
 				07B1C28A26E886CA00C21DA5 /* AreaFile.swift in Sources */,
@@ -179,6 +274,7 @@
 				07EC194226D4E68800B44A55 /* AppDelegate.swift in Sources */,
 				07B1C28826E8850100C21DA5 /* AreaList.swift in Sources */,
 				07EC194426D4E68800B44A55 /* SceneDelegate.swift in Sources */,
+				07B1C29426ECDFA000C21DA5 /* LoginViewController.swift in Sources */,
 				0714E89526DB1C640032AC39 /* ImagesFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +419,7 @@
 		};
 		07EC195326D4E68A00B44A55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7A2BA373CC432B5E87413C1 /* Pods-FlashCard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -342,6 +439,7 @@
 		};
 		07EC195426D4E68A00B44A55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D6D5509E3F916A4040738D5 /* Pods-FlashCard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

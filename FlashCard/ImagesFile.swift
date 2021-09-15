@@ -22,11 +22,11 @@ class ImagesFile{
     var allList = [ImagesList]()
     var areaArray = [[ImagesList]]()
     
-    let hogeList = [
-        ImagesList(ImageName: "北海道", Answer: "北海道"),
-        ImagesList(ImageName: "青森県", Answer: "青森県"),
-        ImagesList(ImageName: "青森県", Answer: "青森県")
-    ]
+//    let hogeList = [
+//        ImagesList(ImageName: "北海道", Answer: "北海道"),
+//        ImagesList(ImageName: "青森県", Answer: "青森県"),
+//        ImagesList(ImageName: "青森県", Answer: "青森県")
+//    ]
     
     init(){
         HokkaidoTohokuList.append(ImagesList(ImageName: "北海道", Answer: "北海道"))

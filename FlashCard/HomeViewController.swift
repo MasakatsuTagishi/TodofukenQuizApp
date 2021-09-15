@@ -32,16 +32,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "areaCell", for: indexPath) as! AreaCell
         cell.areaImageView.image = UIImage(named:areaFile.areaList[indexPath.row].areaImageTitles)
-        print(cell.areaImageView as Any)
+        //print(cell.areaImageView as Any)
         cell.areaTextLabel.text = areaFile.areaList[indexPath.row].areaImageNames
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //セルの高さ指定
-        //        tableView.estimatedRowHeight = 100
-        //        tableView.rowHeight = UITableViewAutomaticDimension
-        //        return UITableView.automaticDimension
+        //tableView.estimatedRowHeight = 100
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        //return UITableView.automaticDimension
         return 80
     }
     
