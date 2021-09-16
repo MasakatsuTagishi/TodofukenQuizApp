@@ -7,10 +7,6 @@
 
 import Foundation
 
-//class ImagesFile{
-
-
-
 class ImagesFile{
     
     var HokkaidoTohokuList = [ImagesList]()

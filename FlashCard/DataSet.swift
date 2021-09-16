@@ -13,5 +13,6 @@ struct DataSet {
     let chiho:String
     let percent:Double
     let postDate:Double
+    let documentId:String
     
 }

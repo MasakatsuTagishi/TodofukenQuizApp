@@ -18,12 +18,13 @@
 		07B1C28826E8850100C21DA5 /* AreaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28726E8850100C21DA5 /* AreaList.swift */; };
 		07B1C28A26E886CA00C21DA5 /* AreaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28926E886CA00C21DA5 /* AreaFile.swift */; };
 		07B1C28E26EC683500C21DA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C28D26EC683500C21DA5 /* GoogleService-Info.plist */; };
-		07B1C29026EC792700C21DA5 /* LoadDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28F26EC792700C21DA5 /* LoadDBModel.swift */; };
 		07B1C29426ECDFA000C21DA5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C29326ECDFA000C21DA5 /* LoginViewController.swift */; };
 		07B1C29826EDAB0F00C21DA5 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */; };
 		07B1C29F26EDB65300C21DA5 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C29D26EDB65300C21DA5 /* ScoreCell.swift */; };
 		07B1C2A026EDB65300C21DA5 /* ScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C29E26EDB65300C21DA5 /* ScoreCell.xib */; };
 		07B1C2A226F0511200C21DA5 /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A126F0511200C21DA5 /* DataSet.swift */; };
+		07B1C2A426F1AC7100C21DA5 /* MoreScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A326F1AC7100C21DA5 /* MoreScoreViewController.swift */; };
+		07B1C2A626F2312400C21DA5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A526F2312400C21DA5 /* TabBarViewController.swift */; };
 		07EC194226D4E68800B44A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194126D4E68800B44A55 /* AppDelegate.swift */; };
 		07EC194426D4E68800B44A55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194326D4E68800B44A55 /* SceneDelegate.swift */; };
 		07EC194626D4E68800B44A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194526D4E68800B44A55 /* ViewController.swift */; };
@@ -45,12 +46,13 @@
 		07B1C28726E8850100C21DA5 /* AreaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaList.swift; sourceTree = "<group>"; };
 		07B1C28926E886CA00C21DA5 /* AreaFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaFile.swift; sourceTree = "<group>"; };
 		07B1C28D26EC683500C21DA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		07B1C28F26EC792700C21DA5 /* LoadDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDBModel.swift; sourceTree = "<group>"; };
 		07B1C29326ECDFA000C21DA5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		07B1C29D26EDB65300C21DA5 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
 		07B1C29E26EDB65300C21DA5 /* ScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCell.xib; sourceTree = "<group>"; };
 		07B1C2A126F0511200C21DA5 /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
+		07B1C2A326F1AC7100C21DA5 /* MoreScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreScoreViewController.swift; sourceTree = "<group>"; };
+		07B1C2A526F2312400C21DA5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		07EC193E26D4E68800B44A55 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC194126D4E68800B44A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07EC194326D4E68800B44A55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,11 +101,12 @@
 			children = (
 				07EC194126D4E68800B44A55 /* AppDelegate.swift */,
 				07EC194326D4E68800B44A55 /* SceneDelegate.swift */,
-				07B1C28F26EC792700C21DA5 /* LoadDBModel.swift */,
 				07B1C2A126F0511200C21DA5 /* DataSet.swift */,
 				07EC194526D4E68800B44A55 /* ViewController.swift */,
 				07B1C29326ECDFA000C21DA5 /* LoginViewController.swift */,
 				07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */,
+				07B1C2A526F2312400C21DA5 /* TabBarViewController.swift */,
+				07B1C2A326F1AC7100C21DA5 /* MoreScoreViewController.swift */,
 				07B1C28526E729F200C21DA5 /* HomeViewController.swift */,
 				07B1C28126E7090400C21DA5 /* AreaCell.swift */,
 				07B1C28226E7090400C21DA5 /* AreaCell.xib */,
@@ -264,11 +267,12 @@
 				07EC194626D4E68800B44A55 /* ViewController.swift in Sources */,
 				07B1C29826EDAB0F00C21DA5 /* ScoreViewController.swift in Sources */,
 				07B1C2A226F0511200C21DA5 /* DataSet.swift in Sources */,
-				07B1C29026EC792700C21DA5 /* LoadDBModel.swift in Sources */,
 				07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */,
 				07B1C29F26EDB65300C21DA5 /* ScoreCell.swift in Sources */,
+				07B1C2A426F1AC7100C21DA5 /* MoreScoreViewController.swift in Sources */,
 				07B1C28326E7090400C21DA5 /* AreaCell.swift in Sources */,
 				07B1C28626E729F200C21DA5 /* HomeViewController.swift in Sources */,
+				07B1C2A626F2312400C21DA5 /* TabBarViewController.swift in Sources */,
 				07B1C28A26E886CA00C21DA5 /* AreaFile.swift in Sources */,
 				0714E89326DA76F50032AC39 /* ImagesList.swift in Sources */,
 				07EC194226D4E68800B44A55 /* AppDelegate.swift in Sources */,
