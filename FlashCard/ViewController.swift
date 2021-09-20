@@ -59,10 +59,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func correctButton(_ sender: Any) {
-        correctCount = correctCount + 1
-        soundFile.playSound(fileName: "CorrectSound", extentionName: "mp3")
-        nextQuestions()
-        changeVisible(visible: false)
+        if correctCount <= 49 {
+            correctCount = correctCount + 1
+            soundFile.playSound(fileName: "CorrectSound", extentionName: "mp3")
+            nextQuestions()
+            changeVisible(visible: false)
+        } else {
+            return
+        }
     }
     
     @IBAction func sendButton(_ sender: Any) {
@@ -78,14 +82,16 @@ class ViewController: UIViewController {
             answerLabel.text = random?.areaText
             visible = false
         } else {
-            correctCount = correctCount - 1
-            print("問題が終了しました")
+            questionNamber = questionNamber + 1
+//            print(correctCount)
             //アラートを出す
-            dataSend()
-            //            let alert = UIAlertController(title: "終了", message: "問題は50問までです", preferredStyle: .alert)
-            //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            //            self.present(alert, animated: true)
-            
+            let alert = UIAlertController(title: "終了", message: "問題は50問までです。", preferredStyle: UIAlertController.Style.alert)
+            let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) -> Void in
+                print("問題が終了しました")
+                self.dataSend()
+            })
+            alert.addAction(alertAction)
+            present(alert, animated: true, completion: nil)
         }
     }
     
@@ -126,8 +132,8 @@ class ViewController: UIViewController {
             return
         }
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            //１つ前の画面（score画面）へ遷移
+        //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        //１つ前の画面（score画面）へ遷移
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.navigationController?.popViewController(animated: true)
         }
