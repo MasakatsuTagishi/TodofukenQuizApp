@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseAuth
 
 class ViewController: UIViewController {
     
@@ -77,12 +78,13 @@ class ViewController: UIViewController {
             answerLabel.text = random?.areaText
             visible = false
         } else {
+            correctCount = correctCount - 1
             print("問題が終了しました")
             //アラートを出す
             dataSend()
-//            let alert = UIAlertController(title: "終了", message: "問題は50問までです", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            self.present(alert, animated: true)
+            //            let alert = UIAlertController(title: "終了", message: "問題は50問までです", preferredStyle: .alert)
+            //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            //            self.present(alert, animated: true)
             
         }
     }
@@ -96,6 +98,7 @@ class ViewController: UIViewController {
     }
     
     func dataSend() {
+        
         if questionNamber >= 2 {
             let chiho:String = areaFile.areaList[listNumber].areaImageNames
             let double1:Double = Double(correctCount)
@@ -104,13 +107,15 @@ class ViewController: UIViewController {
             let areaImage = areaFile.areaList[listNumber].areaImageTitles
             let postDate = Date().timeIntervalSince1970
             let documentId = db.document().documentID
+            let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
             //Firestoreへscoreを送信
             db.document().setData(
                 ["chiho":chiho,
                  "percent":percent,
                  "areaImage":areaImage,
                  "postDate":postDate,
-                 "documentId":documentId
+                 "documentId":documentId,
+                 "userId":userId
                 ]
             )
         } else {
@@ -120,8 +125,12 @@ class ViewController: UIViewController {
             self.present(alert, animated: true)
             return
         }
-        //１つ前の画面（score画面）へ遷移
-        self.navigationController?.popViewController(animated: true)
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            //１つ前の画面（score画面）へ遷移
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.navigationController?.popViewController(animated: true)
+        }
         
     }
     

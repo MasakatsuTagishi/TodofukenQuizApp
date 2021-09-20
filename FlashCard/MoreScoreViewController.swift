@@ -56,18 +56,16 @@ class MoreScoreViewController: UIViewController {
     }
     
     @IBAction func deleteButton(_ sender: Any) {
-        //FireStore内のデータを削除
-        db.collection("score").document(docId).delete() { err in
-            if let err = err {
-                print("Error removing document: \(err)")
-            } else {
-                print("Document successfully removed!")
-                //削除の確認アラートを出す
-                
-                //１つ前の画面（score画面）へ遷移
-                self.navigationController?.popViewController(animated: true)
+            //FireStore内のデータを削除
+            db.collection("score").document(self.docId).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
             }
-        }
+        //１つ前の画面（score画面）へ遷移
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func backButton(_ sender: Any) {

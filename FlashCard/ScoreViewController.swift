@@ -13,8 +13,8 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-    let db = DataBase()
-    var dataSets = [DataSet]()
+    //let db = DataBase()
+    private var dataSets = [DataSet]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +28,15 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.dataSets = db.loadContents()
-        self.tableView.reloadData()
-//        loadContents()
+        loadContents()
         //backButtonを非表示
         navigationItem.hidesBackButton = true
         self.tabBarController?.tabBar.isHidden = false
+        //self.dataSets = db.loadContents()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let scorecount = dataSets
-        return scorecount.count
+        return dataSets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,13 +49,6 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         scoreLabel.text = String(dataSets[indexPath.row].percent)+"%"
         return cell
     }
-    
-//    var text = "Hello, playground"
-//
-//    let from = text.index(text.startIndex, offsetBy:0)
-//    let to = text.index(text.startIndex, offsetBy:5)
-//    let newString = String(text[from..<to])
-//    print(newString)
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
@@ -83,12 +74,43 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         vc.docId = docId
         //MoreScoreViewControllerへ遷移
         navigationController?.pushViewController(vc, animated: true)
+        
     }
     
-//    func loadContents() {
-//        //Documentの取得→percentの大きい順に取得する
+    func loadContents() {
+        dataSets = []
+        let userId = UserDefaults.standard.value(forKey: "uid") as! String
+        let db = Firestore.firestore()
+        //Documentの取得→percentの大きい順に取得する
+        db.collection("score").whereField("userId", isEqualTo: userId).order(by: "percent", descending: true).addSnapshotListener { (snapshot, error) in
+            if error != nil {return}
+            if let snapshotDoc = snapshot?.documents {
+                for document in snapshotDoc {
+                    let data = document.data()
+                    if let areaImage = data["areaImage"] as? String,
+                       let chiho = data["chiho"] as? String,
+                       let percent = data["percent"] as? Double,
+                       let postDate = data["postDate"] as? Double{
+                        let newDataSet = DataSet(areaImage: areaImage, chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
+                        self.dataSets.append(newDataSet)
+                        //                                              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+//class DataBase {
+//    let db = Firestore.firestore()
+//
+//    func loadContents() -> [DataSet] {
+//        var dataSets:[DataSet] = []
+//
 //        db.collection("score").order(by: "percent", descending: true).addSnapshotListener { (snapshot, error) in
-//            self.dataSets = []
 //            if error != nil {return}
 //            if let snapshotDoc = snapshot?.documents {
 //                for document in snapshotDoc {
@@ -99,38 +121,12 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //                       let postDate = data["postDate"] as? Double
 //                    {
 //                        let newDataSet = DataSet(areaImage: areaImage, chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
-//                        self.dataSets.append(newDataSet)
-//                        self.tableView.reloadData()
+//                        dataSets.append(newDataSet)
 //                    }
 //                }
 //            }
 //        }
+//
+//        return dataSets
 //    }
-}
-
-class DataBase {
-    let db = Firestore.firestore()
-    
-    func loadContents() -> [DataSet] {
-        var dataSets:[DataSet] = []
-        
-        db.collection("score").order(by: "percent", descending: true).addSnapshotListener { (snapshot, error) in
-            if error != nil {return}
-            if let snapshotDoc = snapshot?.documents {
-                for document in snapshotDoc {
-                    let data = document.data()
-                    if let areaImage = data["areaImage"] as? String,
-                       let chiho = data["chiho"] as? String,
-                       let percent = data["percent"] as? Double,
-                       let postDate = data["postDate"] as? Double
-                    {
-                        let newDataSet = DataSet(areaImage: areaImage, chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
-                        dataSets.append(newDataSet)
-                    }
-                }
-            }
-        }
-        
-        return dataSets
-    }
-}
+//}
