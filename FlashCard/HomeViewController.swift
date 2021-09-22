@@ -23,6 +23,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.rowHeight = 80
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let areacount = areaFile.areaList
         return areacount.count

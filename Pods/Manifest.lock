@@ -312,12 +312,14 @@ PODS:
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
+  - SegementSlide (3.0.1)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Storage
   - SDWebImage
+  - SegementSlide
 
 SPEC REPOS:
   trunk:
@@ -338,6 +340,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SDWebImage
+    - SegementSlide
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -357,7 +360,8 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SegementSlide: 83b56ffb66b9c0edc4e4f2a74229309c62915db3
 
-PODFILE CHECKSUM: 88b0f4228619d5712482928af0596f9ff3bd75af
+PODFILE CHECKSUM: dfccefa09f2ab55d71cb3c26c6a6206b66961c8f
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2

@@ -13,5 +13,6 @@ target 'FlashCard' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'SDWebImage'
+  pod 'SegementSlide'
 
 end

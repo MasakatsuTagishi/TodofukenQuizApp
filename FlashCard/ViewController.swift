@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     @IBAction func answerSwitching(_ sender: Any) {
@@ -131,12 +131,10 @@ class ViewController: UIViewController {
             self.present(alert, animated: true)
             return
         }
-        
-        //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         //１つ前の画面（score画面）へ遷移
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.navigationController?.popViewController(animated: true)
-        }
+//        }
         
     }
     

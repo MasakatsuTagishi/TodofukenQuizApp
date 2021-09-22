@@ -11,11 +11,11 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +35,6 @@ class LoginViewController: UIViewController {
             self.navigationController?.pushViewController(tabVC, animated: true)
         }
     }
-    
-    
-
 }
+
+

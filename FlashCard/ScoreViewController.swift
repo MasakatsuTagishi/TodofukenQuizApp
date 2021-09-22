@@ -29,6 +29,7 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadContents()
+        tableView.reloadData()
         //backButtonを非表示
         navigationItem.hidesBackButton = true
         self.tabBarController?.tabBar.isHidden = false

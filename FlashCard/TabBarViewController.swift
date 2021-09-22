@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SegementSlide
 
 class TabBarViewController: UITabBarController {
 
