@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     let imagesFile = ImagesFile()
     let soundFile = SoundFile()
     let areaFile = AreaFile()
+    let keyChain = Keychain()
     
     let db = Firestore.firestore().collection("score")
     
@@ -113,7 +114,10 @@ class ViewController: UIViewController {
             let areaImage = areaFile.areaList[listNumber].areaImageTitles
             let postDate = Date().timeIntervalSince1970
             let documentId = db.document().documentID
-            let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
+            let userId:String = try! keyChain.get("uid")!
+            print("hoge")
+            print(userId)
+//            let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
             //Firestoreへscoreを送信
             db.document().setData(
                 ["chiho":chiho,

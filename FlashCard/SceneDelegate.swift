@@ -9,37 +9,38 @@ import UIKit
 import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
+    let keyChain = Keychain()
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        if Auth.auth().currentUser?.uid != nil {
-            
+        let loginId = try? keyChain.get("uid")
+
+        if loginId != nil {
+
             let window = UIWindow(windowScene: scene as! UIWindowScene)
             self.window = window
             window.makeKeyAndVisible()
-            
+
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let tabVC = storyBoard.instantiateViewController(identifier: "tabVC")
             let navVC = UINavigationController(rootViewController: tabVC)
             window.rootViewController = navVC
-            
+
         } else {
-            
+
             let window = UIWindow(windowScene: scene as! UIWindowScene)
             self.window = window
             window.makeKeyAndVisible()
-            
+
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let tabVC = storyBoard.instantiateViewController(identifier: "loginVC")
             let navVC = UINavigationController(rootViewController: tabVC)
             window.rootViewController = navVC
-            
+
         }
-        
-        
+
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
@@ -64,13 +65,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
     }
-
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
-    }
-
 
 }
 

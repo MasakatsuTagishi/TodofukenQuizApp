@@ -15,6 +15,7 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //let db = DataBase()
     private var dataSets = [DataSet]()
+    let keyChain = Keychain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +81,9 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func loadContents() {
         dataSets = []
-        let userId = UserDefaults.standard.value(forKey: "uid") as! String
+        let loginUserId = try! keyChain.get("uid")
+        UserDefaults.standard.set(loginUserId, forKey: "uid")
+        let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
         let db = Firestore.firestore()
         //Documentの取得→percentの大きい順に取得する
         db.collection("score").whereField("userId", isEqualTo: userId).order(by: "percent", descending: true).addSnapshotListener { (snapshot, error) in
