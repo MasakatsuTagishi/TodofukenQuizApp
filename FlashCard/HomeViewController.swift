@@ -29,14 +29,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let areacount = areaFile.areaList
+        let areacount = areaFile.chihoList
         return areacount.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "areaCell", for: indexPath) as! AreaCell
-        cell.areaImageView.image = UIImage(named:areaFile.areaList[indexPath.row].areaImageTitles)
-        cell.areaTextLabel.text = areaFile.areaList[indexPath.row].areaImageNames
+        cell.areaImageView.image = UIImage(named:areaFile.chihoList[indexPath.row].areaImageTitles)
+        cell.areaTextLabel.text = areaFile.chihoList[indexPath.row].areaImageNames
         return cell
     }
     
