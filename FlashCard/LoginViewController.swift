@@ -18,26 +18,21 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //navigationBarを非表示にする
         navigationController?.setNavigationBarHidden(true,animated:true)
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        
         if isPlaying { return }
         isPlaying = true
         registerId()
-        
     }
     
     func registerId() {
         DispatchQueue.global().async {
-            //ログインidを保存
             Auth.auth().signInAnonymously { [self] authResult, error in
                 guard let user = authResult?.user
                 else {
@@ -45,7 +40,6 @@ class LoginViewController: UIViewController {
                 }
                 let uid = user.uid
                 try? keyChain.set(uid, key: "uid")
-                //ホーム画面へ遷移
                 let tabVC = self.storyboard?.instantiateViewController(identifier: "tabVC") as! TabBarViewController
                 self.navigationController?.pushViewController(tabVC, animated: true)
             }

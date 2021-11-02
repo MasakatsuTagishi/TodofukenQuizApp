@@ -17,23 +17,3 @@ class AreaList {
     }
     
 }
-
-//struct Todofuken {
-//    let name: String
-//    let chiho: chiho
-//    let image: UIImage
-//    
-//    enum chiho {
-//        case hokkaidoTohoku
-//        case kanto
-//        case chubu
-//        case kyusyu
-//    }
-//}
-//
-//class Area {
-//    let hokkaidoTohoku = [
-//        Todofuken(name: "北海道", chiho: .hokkaidoTohoku, image: UIImage(named: "hokkaido")!),
-//        Todofuken(name: "青森", chiho: .hokkaidoTohoku, image: UIImage(named: "aomori")!),
-//    ]
-//}

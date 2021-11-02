@@ -10,7 +10,6 @@
 		0714E89326DA76F50032AC39 /* ImagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0714E89226DA76F50032AC39 /* ImagesList.swift */; };
 		0714E89526DB1C640032AC39 /* ImagesFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0714E89426DB1C640032AC39 /* ImagesFile.swift */; };
 		071ABC9C27310011006F11B5 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ABC9B27310011006F11B5 /* Keychain.swift */; };
-		071F709226F4D102006E9B5E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F709126F4D102006E9B5E /* DatabaseManager.swift */; };
 		07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C27126DE080F00C21DA5 /* SoundFile.swift */; };
 		07B1C27426DE08B900C21DA5 /* CorrectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */; };
 		07B1C27626DE08C500C21DA5 /* WrongSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */; };
@@ -40,7 +39,6 @@
 		0714E89226DA76F50032AC39 /* ImagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesList.swift; sourceTree = "<group>"; };
 		0714E89426DB1C640032AC39 /* ImagesFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesFile.swift; sourceTree = "<group>"; };
 		071ABC9B27310011006F11B5 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		071F709126F4D102006E9B5E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		07B1C27126DE080F00C21DA5 /* SoundFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFile.swift; sourceTree = "<group>"; };
 		07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectSound.mp3; sourceTree = "<group>"; };
 		07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongSound.mp3; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				07EC194126D4E68800B44A55 /* AppDelegate.swift */,
 				07EC194326D4E68800B44A55 /* SceneDelegate.swift */,
 				07B1C2A126F0511200C21DA5 /* DataSet.swift */,
-				071F709126F4D102006E9B5E /* DatabaseManager.swift */,
 				07EC194526D4E68800B44A55 /* ViewController.swift */,
 				07B1C29326ECDFA000C21DA5 /* LoginViewController.swift */,
 				07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */,
@@ -274,7 +271,6 @@
 				07B1C29826EDAB0F00C21DA5 /* ScoreViewController.swift in Sources */,
 				07B1C2A226F0511200C21DA5 /* DataSet.swift in Sources */,
 				07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */,
-				071F709226F4D102006E9B5E /* DatabaseManager.swift in Sources */,
 				07B1C29F26EDB65300C21DA5 /* ScoreCell.swift in Sources */,
 				07B1C2A426F1AC7100C21DA5 /* MoreScoreViewController.swift in Sources */,
 				07B1C28326E7090400C21DA5 /* AreaCell.swift in Sources */,

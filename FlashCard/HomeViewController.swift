@@ -15,10 +15,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //デリゲート記述
         tableView.delegate = self
         tableView.dataSource = self
-        //カスタムセル記述
         tableView.register(UINib(nibName: "AreaCell", bundle: nil), forCellReuseIdentifier: "areaCell")
         tableView.rowHeight = 80
     }
@@ -50,12 +48,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        //遷移先指定
         let vc = storyboard?.instantiateViewController(withIdentifier: "ViewVC") as! ViewController
-        //ViewControllerの変数に行数の数値を渡す
         vc.listNumber = indexPath.row
-        //ViewControllerへ遷移
         navigationController?.pushViewController(vc, animated: true)
     }
     

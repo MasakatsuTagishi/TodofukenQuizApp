@@ -84,11 +84,8 @@ class ViewController: UIViewController {
             visible = false
         } else {
             questionNamber = questionNamber + 1
-//            print(correctCount)
-            //アラートを出す
             let alert = UIAlertController(title: "終了", message: "問題は50問までです。", preferredStyle: UIAlertController.Style.alert)
             let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) -> Void in
-                print("問題が終了しました")
                 self.dataSend()
             })
             alert.addAction(alertAction)
@@ -115,10 +112,6 @@ class ViewController: UIViewController {
             let postDate = Date().timeIntervalSince1970
             let documentId = db.document().documentID
             let userId:String = try! keyChain.get("uid")!
-            print("hoge")
-            print(userId)
-//            let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
-            //Firestoreへscoreを送信
             db.document().setData(
                 ["chiho":chiho,
                  "percent":percent,
@@ -129,17 +122,12 @@ class ViewController: UIViewController {
                 ]
             )
         } else {
-            //アラートを出す
             let alert = UIAlertController(title: "エラー", message: "問題を解いてください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true)
             return
         }
-        //１つ前の画面（score画面）へ遷移
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.navigationController?.popViewController(animated: true)
-//        }
-        
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
