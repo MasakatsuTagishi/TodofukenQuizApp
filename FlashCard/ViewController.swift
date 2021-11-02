@@ -107,11 +107,11 @@ class ViewController: UIViewController {
     func dataSend() {
         
         if questionNamber >= 2 {
-            let chiho:String = areaFile.areaList[listNumber].areaImageNames
+            let chiho:String = areaFile.chihoList[listNumber].areaImageNames
             let double1:Double = Double(correctCount)
             let double2:Double = Double(questionNamber-1)
             let percent:Double = round((double1/double2)*1000)/10
-            let areaImage = areaFile.areaList[listNumber].areaImageTitles
+            let areaImage = areaFile.chihoList[listNumber].areaImageTitles
             let postDate = Date().timeIntervalSince1970
             let documentId = db.document().documentID
             let userId:String = try! keyChain.get("uid")!
