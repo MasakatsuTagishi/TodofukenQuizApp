@@ -21,9 +21,9 @@ class ViewController: UIViewController {
     var visible:Bool = false
     var listNumber:Int = 0
     
-    let imagesFile = ImagesFile()
+    let todofukenList = AreaList()
     let soundFile = SoundFile()
-    let areaFile = AreaFile()
+    let chihoList = ChihoList()
     let keyChain = Keychain()
     
     let db = Firestore.firestore().collection("score")
@@ -31,11 +31,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let random = imagesFile.areaArray[listNumber].randomElement()
+        let random = todofukenList.allList[listNumber].randomElement()
         countLabel.text = "第\(questionNamber)問"
         changeVisible(visible: false)
-        answerLabel.text = random?.areaText
-        imageView.image = UIImage(named: random!.areaAnswer)
+        answerLabel.text = random?.name
+        imageView.image = random?.image
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,12 +75,12 @@ class ViewController: UIViewController {
     }
     
     func nextQuestions() {
-        let random = imagesFile.areaArray[listNumber].randomElement()
+        let random = todofukenList.allList[listNumber].randomElement()
         if questionNamber < 50 {
             questionNamber = questionNamber + 1
             countLabel.text = "第\(questionNamber)問"
-            imageView.image = UIImage(named: random!.areaText)
-            answerLabel.text = random?.areaText
+            imageView.image = random?.image
+            answerLabel.text = random?.name
             visible = false
         } else {
             questionNamber = questionNamber + 1
@@ -107,11 +107,11 @@ class ViewController: UIViewController {
     func dataSend() {
         
         if questionNamber >= 2 {
-            let chiho:String = areaFile.chihoList[listNumber].areaImageNames
+            let chiho:String = chihoList.chihoList[listNumber].chihoNames
             let double1:Double = Double(correctCount)
             let double2:Double = Double(questionNamber-1)
             let percent:Double = round((double1/double2)*1000)/10
-            let areaImage = areaFile.chihoList[listNumber].areaImageTitles
+            let areaImage = chihoList.chihoList[listNumber].chihoNames
             let postDate = Date().timeIntervalSince1970
             let documentId = db.document().documentID
             let userId:String = try! keyChain.get("uid")!

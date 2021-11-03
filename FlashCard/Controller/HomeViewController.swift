@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let areaFile = AreaFile()
+    let chihoList = ChihoList()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,14 +29,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let areacount = areaFile.chihoList
+        let areacount = chihoList.chihoList
         return areacount.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "areaCell", for: indexPath) as! AreaCell
-        cell.areaImageView.image = UIImage(named:areaFile.chihoList[indexPath.row].areaImageTitles)
-        cell.areaTextLabel.text = areaFile.chihoList[indexPath.row].areaImageNames
+        cell.areaImageView.image = UIImage(named:chihoList.chihoList[indexPath.row].chihoNames)
+        cell.areaTextLabel.text = chihoList.chihoList[indexPath.row].chihoNames
         return cell
     }
     
