@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     
     @IBAction func correctButton(_ sender: Any) {
         if correctCount <= 49 {
-            correctCount = correctCount + 1
+            correctCountUp()
             soundFile.playSound(fileName: "CorrectSound", extentionName: "mp3")
             nextQuestions()
             changeVisible(visible: false)
@@ -77,14 +77,13 @@ class ViewController: UIViewController {
     func nextQuestions() {
         let random = todofukenList.allList[listNumber].randomElement()
         if questionNamber < 50 {
-            questionNamber = questionNamber + 1
+            questionNumberUp()
             countLabel.text = "第\(questionNamber)問"
             imageView.image = random?.image
             answerLabel.text = random?.name
             visible = false
         } else {
-            questionNamber = questionNamber + 1
-//            print(correctCount)
+            questionNumberUp()
             //アラートを出す
             let alert = UIAlertController(title: "終了", message: "問題は50問までです。", preferredStyle: UIAlertController.Style.alert)
             let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) -> Void in
@@ -140,6 +139,14 @@ class ViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
 //        }
         
+    }
+    
+    func correctCountUp() {
+        correctCount = Calculator.countUp(count: correctCount, addCount: 1)
+    }
+    
+    func questionNumberUp() {
+        questionNamber = Calculator.countUp(count: questionNamber, addCount: 1)
     }
     
 }
