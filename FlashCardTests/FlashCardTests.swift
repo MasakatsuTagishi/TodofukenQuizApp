@@ -34,5 +34,9 @@ class FlashCardTests: XCTestCase {
         let answer = Calculator.countUp(count: 1, addCount: 1)
         XCTAssertEqual(answer, 2)
     }
+    
+    func testCaluculatePercent() {
+        XCTAssertEqual(Calculator.caluculatePercent(correctCount: 3, questionNumber: 9),33.3)
+    }
 
 }
