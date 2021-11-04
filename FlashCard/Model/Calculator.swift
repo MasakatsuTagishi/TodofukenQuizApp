@@ -13,7 +13,7 @@ struct Calculator {
         return count + addCount
     }
     
-    static func division(correctCount:Double, questionNumber:Double) -> Double {
+    static func caluculatePercent(correctCount:Double, questionNumber:Double) -> Double {
         return round((correctCount/questionNumber)*1000)/10
     }
     
