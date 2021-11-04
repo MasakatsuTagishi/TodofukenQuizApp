@@ -109,7 +109,7 @@ class ViewController: UIViewController {
             let chiho:String = chihoList.chihoList[listNumber].chihoNames
             let double1:Double = Double(correctCount)
             let double2:Double = Double(questionNamber-1)
-            let percent:Double = round((double1/double2)*1000)/10
+            let percent:Double = Calculator.division(correctCount: double1, questionNumber: double2)
             let areaImage = chihoList.chihoList[listNumber].chihoNames
             let postDate = Date().timeIntervalSince1970
             let documentId = db.document().documentID
