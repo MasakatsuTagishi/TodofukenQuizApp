@@ -10,6 +10,7 @@
 		071ABC9C27310011006F11B5 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ABC9B27310011006F11B5 /* Keychain.swift */; };
 		071ABCA427322B71006F11B5 /* TodofukenList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ABCA327322B71006F11B5 /* TodofukenList.swift */; };
 		071ABCA727325C86006F11B5 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ABCA627325C86006F11B5 /* Calculator.swift */; };
+		071ABCAF2733797F006F11B5 /* FlashCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ABCAE2733797F006F11B5 /* FlashCardTests.swift */; };
 		071F709226F4D102006E9B5E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F709126F4D102006E9B5E /* DatabaseManager.swift */; };
 		07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C27126DE080F00C21DA5 /* SoundFile.swift */; };
 		07B1C27426DE08B900C21DA5 /* CorrectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */; };
@@ -32,13 +33,27 @@
 		07EC194926D4E68800B44A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EC194726D4E68800B44A55 /* Main.storyboard */; };
 		07EC194B26D4E68A00B44A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC194A26D4E68A00B44A55 /* Assets.xcassets */; };
 		07EC194E26D4E68A00B44A55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EC194C26D4E68A00B44A55 /* LaunchScreen.storyboard */; };
+		45A80AEB549922CC036A2C92 /* Pods_FlashCardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656956618F935351908FFBD /* Pods_FlashCardTests.framework */; };
 		EC9182A9189FDB8A567C963D /* Pods_FlashCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D0AEAEB0670C0189467E98 /* Pods_FlashCard.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		071ABCB12733797F006F11B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07EC193626D4E68800B44A55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07EC193D26D4E68800B44A55;
+			remoteInfo = FlashCard;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		071ABC9B27310011006F11B5 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		071ABCA327322B71006F11B5 /* TodofukenList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodofukenList.swift; sourceTree = "<group>"; };
 		071ABCA627325C86006F11B5 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		071ABCAC2733797E006F11B5 /* FlashCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		071ABCAE2733797F006F11B5 /* FlashCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardTests.swift; sourceTree = "<group>"; };
+		071ABCB02733797F006F11B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		071F709126F4D102006E9B5E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		07B1C27126DE080F00C21DA5 /* SoundFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFile.swift; sourceTree = "<group>"; };
 		07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectSound.mp3; sourceTree = "<group>"; };
@@ -63,12 +78,23 @@
 		07EC194A26D4E68A00B44A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07EC194D26D4E68A00B44A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07EC194F26D4E68A00B44A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		095B1EE6E007554BBB28FA12 /* Pods-FlashCardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardTests.release.xcconfig"; path = "Target Support Files/Pods-FlashCardTests/Pods-FlashCardTests.release.xcconfig"; sourceTree = "<group>"; };
 		28D0AEAEB0670C0189467E98 /* Pods_FlashCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4656956618F935351908FFBD /* Pods_FlashCardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6D5509E3F916A4040738D5 /* Pods-FlashCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.release.xcconfig"; path = "Target Support Files/Pods-FlashCard/Pods-FlashCard.release.xcconfig"; sourceTree = "<group>"; };
+		6CDDF3A8C1E861D231E30AA2 /* Pods-FlashCardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardTests.debug.xcconfig"; path = "Target Support Files/Pods-FlashCardTests/Pods-FlashCardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7A2BA373CC432B5E87413C1 /* Pods-FlashCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.debug.xcconfig"; path = "Target Support Files/Pods-FlashCard/Pods-FlashCard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		071ABCA92733797E006F11B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A80AEB549922CC036A2C92 /* Pods_FlashCardTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07EC193B26D4E68800B44A55 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -120,10 +146,20 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		071ABCAD2733797F006F11B5 /* FlashCardTests */ = {
+			isa = PBXGroup;
+			children = (
+				071ABCAE2733797F006F11B5 /* FlashCardTests.swift */,
+				071ABCB02733797F006F11B5 /* Info.plist */,
+			);
+			path = FlashCardTests;
+			sourceTree = "<group>";
+		};
 		07EC193526D4E68800B44A55 = {
 			isa = PBXGroup;
 			children = (
 				07EC194026D4E68800B44A55 /* FlashCard */,
+				071ABCAD2733797F006F11B5 /* FlashCardTests */,
 				07EC193F26D4E68800B44A55 /* Products */,
 				F5339C13F10B0C4130F19AFB /* Pods */,
 				9B9B03B0DE9C1836CA1BDF9E /* Frameworks */,
@@ -134,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				07EC193E26D4E68800B44A55 /* FlashCard.app */,
+				071ABCAC2733797E006F11B5 /* FlashCardTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				28D0AEAEB0670C0189467E98 /* Pods_FlashCard.framework */,
+				4656956618F935351908FFBD /* Pods_FlashCardTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +206,8 @@
 			children = (
 				A7A2BA373CC432B5E87413C1 /* Pods-FlashCard.debug.xcconfig */,
 				4D6D5509E3F916A4040738D5 /* Pods-FlashCard.release.xcconfig */,
+				6CDDF3A8C1E861D231E30AA2 /* Pods-FlashCardTests.debug.xcconfig */,
+				095B1EE6E007554BBB28FA12 /* Pods-FlashCardTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -175,6 +215,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		071ABCAB2733797E006F11B5 /* FlashCardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 071ABCB52733797F006F11B5 /* Build configuration list for PBXNativeTarget "FlashCardTests" */;
+			buildPhases = (
+				F95EC692C2F77FC73DD6EC38 /* [CP] Check Pods Manifest.lock */,
+				071ABCA82733797E006F11B5 /* Sources */,
+				071ABCA92733797E006F11B5 /* Frameworks */,
+				071ABCAA2733797E006F11B5 /* Resources */,
+				EE5787381803C6B410B21A2B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				071ABCB22733797F006F11B5 /* PBXTargetDependency */,
+			);
+			name = FlashCardTests;
+			productName = FlashCardTests;
+			productReference = 071ABCAC2733797E006F11B5 /* FlashCardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		07EC193D26D4E68800B44A55 /* FlashCard */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07EC195226D4E68A00B44A55 /* Build configuration list for PBXNativeTarget "FlashCard" */;
@@ -203,6 +263,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					071ABCAB2733797E006F11B5 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 07EC193D26D4E68800B44A55;
+					};
 					07EC193D26D4E68800B44A55 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -222,11 +286,19 @@
 			projectRoot = "";
 			targets = (
 				07EC193D26D4E68800B44A55 /* FlashCard */,
+				071ABCAB2733797E006F11B5 /* FlashCardTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		071ABCAA2733797E006F11B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07EC193C26D4E68800B44A55 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,9 +356,56 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE5787381803C6B410B21A2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlashCardTests/Pods-FlashCardTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlashCardTests/Pods-FlashCardTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlashCardTests/Pods-FlashCardTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F95EC692C2F77FC73DD6EC38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashCardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		071ABCA82733797E006F11B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				071ABCAF2733797F006F11B5 /* FlashCardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07EC193A26D4E68800B44A55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,6 +432,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		071ABCB22733797F006F11B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07EC193D26D4E68800B44A55 /* FlashCard */;
+			targetProxy = 071ABCB12733797F006F11B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		07EC194726D4E68800B44A55 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -333,6 +460,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		071ABCB32733797F006F11B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CDDF3A8C1E861D231E30AA2 /* Pods-FlashCardTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T6RT73J9GG;
+				INFOPLIST_FILE = FlashCardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MasakatsuTagishi.FlashCardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashCard.app/FlashCard";
+			};
+			name = Debug;
+		};
+		071ABCB42733797F006F11B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 095B1EE6E007554BBB28FA12 /* Pods-FlashCardTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T6RT73J9GG;
+				INFOPLIST_FILE = FlashCardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MasakatsuTagishi.FlashCardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashCard.app/FlashCard";
+			};
+			name = Release;
+		};
 		07EC195026D4E68A00B44A55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -492,6 +661,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		071ABCB52733797F006F11B5 /* Build configuration list for PBXNativeTarget "FlashCardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				071ABCB32733797F006F11B5 /* Debug */,
+				071ABCB42733797F006F11B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		07EC193926D4E68800B44A55 /* Build configuration list for PBXProject "FlashCard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
