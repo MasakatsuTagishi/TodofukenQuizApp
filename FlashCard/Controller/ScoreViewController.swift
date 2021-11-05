@@ -13,9 +13,9 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-    //let db = DataBase()
     private var dataSets = [DataSet]()
     let keyChain = Keychain()
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,6 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //backButtonを非表示
         navigationItem.hidesBackButton = true
         self.tabBarController?.tabBar.isHidden = false
-        //self.dataSets = db.loadContents()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,7 +43,7 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath) as! ScoreCell
         let scoreImageView = cell.contentView.viewWithTag(1) as! UIImageView
-        scoreImageView.image = UIImage(named:dataSets[indexPath.row].areaImage)
+        scoreImageView.image = UIImage(named:dataSets[indexPath.row].chiho)
         let areaLabel = cell.contentView.viewWithTag(2) as! UILabel
         areaLabel.text = dataSets[indexPath.row].chiho
         let scoreLabel = cell.contentView.viewWithTag(3) as! UILabel
@@ -80,24 +79,21 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func loadContents() {
-        dataSets = []
         let loginUserId = try! keyChain.get("uid")
         UserDefaults.standard.set(loginUserId, forKey: "uid")
         let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
-        let db = Firestore.firestore()
         //Documentの取得→percentの大きい順に取得する
-        db.collection("score").whereField("userId", isEqualTo: userId).order(by: "percent", descending: true).addSnapshotListener { (snapshot, error) in
+        db.collection(userId).order(by: "percent", descending: true).addSnapshotListener { (snapshot, error) in
             if error != nil {return}
             if let snapshotDoc = snapshot?.documents {
+                self.dataSets = []
                 for document in snapshotDoc {
                     let data = document.data()
-                    if let areaImage = data["areaImage"] as? String,
-                       let chiho = data["chiho"] as? String,
+                    if let chiho = data["chiho"] as? String,
                        let percent = data["percent"] as? Double,
                        let postDate = data["postDate"] as? Double{
-                        let newDataSet = DataSet(areaImage: areaImage, chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
+                        let newDataSet = DataSet(chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
                         self.dataSets.append(newDataSet)
-                        //                                              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         self.tableView.reloadData()
                     }
                 }

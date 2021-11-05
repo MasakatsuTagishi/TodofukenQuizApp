@@ -20,6 +20,7 @@ class MoreScoreViewController: UIViewController {
     @IBOutlet weak var percentLabel: UILabel!
     
     let db = Firestore.firestore()
+    let keyChain = Keychain()
     var dataSets = [DataSet]()
     var scoreImage = String()
     var areaLabel = String()
@@ -57,17 +58,20 @@ class MoreScoreViewController: UIViewController {
     
     @IBAction func deleteButton(_ sender: Any) {
         let alert = UIAlertController(title: "確認", message: "データを削除しますか？", preferredStyle: UIAlertController.Style.alert)
-        let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction!) -> Void in
+        let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self](action: UIAlertAction!) -> Void in
+            let loginUserId = try! keyChain.get("uid")
+            UserDefaults.standard.set(loginUserId, forKey: "uid")
+            let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
             //FireStore内のデータを削除
-            self.db.collection("score").document(self.docId).delete() { err in
+            self.db.collection(userId).document(self.docId).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
                 } else {
                     print("Document successfully removed!")
+                    //１つ前の画面（score画面）へ遷移
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
-            //１つ前の画面（score画面）へ遷移
-            self.navigationController?.popViewController(animated: true)
         })
         alert.addAction(alertAction)
         alert.addAction(UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil))

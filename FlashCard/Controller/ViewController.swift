@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     let chihoList = ChihoList()
     let keyChain = Keychain()
     
-    let db = Firestore.firestore().collection("score")
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,35 +110,24 @@ class ViewController: UIViewController {
             let double1:Double = Double(correctCount)
             let double2:Double = Double(questionNamber-1)
             let percent:Double = Calculator.caluculatePercent(correctCount: double1, questionNumber: double2)
-            let areaImage = chihoList.chihoList[listNumber].chihoNames
             let postDate = Date().timeIntervalSince1970
-            let documentId = db.document().documentID
             let userId:String = try! keyChain.get("uid")!
-            print("hoge")
-            print(userId)
-//            let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
+            let documentId = db.collection(userId).document().documentID
             //Firestoreへscoreを送信
-            db.document().setData(
+            db.collection(userId).document(documentId).setData(
                 ["chiho":chiho,
                  "percent":percent,
-                 "areaImage":areaImage,
                  "postDate":postDate,
-                 "documentId":documentId,
-                 "userId":userId
+                 "documentId":documentId
                 ]
             )
         } else {
-            //アラートを出す
             let alert = UIAlertController(title: "エラー", message: "問題を解いてください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true)
             return
         }
-        //１つ前の画面（score画面）へ遷移
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.navigationController?.popViewController(animated: true)
-//        }
-        
     }
     
     func correctCountUp() {

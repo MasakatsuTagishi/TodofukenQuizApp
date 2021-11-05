@@ -7,7 +7,7 @@
 
 struct DataSet {
     
-    let areaImage:String
+//    let areaImage:String
     let chiho:String
     let percent:Double
     let postDate:Double
