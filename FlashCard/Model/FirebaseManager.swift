@@ -19,6 +19,7 @@ class FirebaseManager {
     let keyChain = Keychain()
     static var rankingData:[Ranking] = []
     
+    
     func sendData(chiho: String, percent: Double, postDate: Double, documentId: String) {
         let userId = try! keyChain.get("uid")!
         let rankingData = [
@@ -30,9 +31,9 @@ class FirebaseManager {
         db.collection(userId).document(documentId).setData(rankingData)
     }
     
+    
     func getData(completion: @escaping (Result<[Ranking], Error>) -> Void) {
         let userId = try! keyChain.get("uid")!
-//        var rankingData:[Ranking] = []
         db.collection(userId).order(by: "percent", descending: true).addSnapshotListener { querySnapshot, error in
             if let error = error {
                 completion(.failure(error))
@@ -48,58 +49,22 @@ class FirebaseManager {
                         let newRanking = Ranking(chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
                         FirebaseManager.rankingData.append(newRanking)
                         completion(.success(FirebaseManager.rankingData))
-                        print(FirebaseManager.rankingData)
                     }
                 }
             }
         }
     }
+    
+    func deleteData(docId: String, completion: @escaping (Bool) -> Void) {
+        let userId = try! keyChain.get("uid")!
+        db.collection(userId).document(docId).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+                completion(true)
+            }
+        }
+    }
+    
 }
-            
-           
-//            guard let documents = querySnapshot?.documents else {
-//                        print("Error fetching documents: \(error!)")
-//                        return
-//                    }
-//
-//
-//
-//            if error != nil {return}
-//            if let snapshotDoc = snapshot?.documents {
-//                for document in snapshotDoc {
-//                    let data = document.data()
-//                    if let chiho = data["chiho"] as? String,
-//                       let percent = data["percent"] as? Double,
-//                       let postDate = data["postDate"] as? Double{
-//                        let newRankingData = Ranking(chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
-//                        rankingData.append(newRankingData)
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
-        
-//        let userId = try! keyChain.get("uid")!
-//        var dataSets = ScoreViewController().dataSets
-//        db.collection(userId).order(by: "percent", descending: true).addSnapshotListener { (snapshot, error) in
-//            if error != nil {return}
-//            dataSets = []
-//            if let snapshotDoc = snapshot?.documents {
-//                for document in snapshotDoc {
-//                    let data = document.data()
-//                    if let chiho = data["chiho"] as? String,
-//                       let percent = data["percent"] as? Double,
-//                       let postDate = data["postDate"] as? Double{
-//                        let newDataSet = DataSet(chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
-//                        dataSets.append(newDataSet)
-//                    }
-//                }
-//            }
-//        }
-//        return dataSets
-//    }
-//
-//
-//}
-

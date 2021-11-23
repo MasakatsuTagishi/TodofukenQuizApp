@@ -19,9 +19,7 @@ class MoreScoreViewController: UIViewController {
     @IBOutlet weak var scoreTitle: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     
-    let db = Firestore.firestore()
     let keyChain = Keychain()
-//    var rankingData = [Ranking]()
     var scoreImage = String()
     var areaLabel = String()
     var scoreLabel = Double()
@@ -33,10 +31,8 @@ class MoreScoreViewController: UIViewController {
         
         let dateUnix: TimeInterval = date
         let newdate = NSDate(timeIntervalSince1970: dateUnix)
-        //NSDate型を日時文字列に変換するためのNSDateFormatterを生成
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
-        //NSDateFormatterを使ってNSDate型 "date" を日時文字列 "dateStr" に変換
         let dateStr: String = formatter.string(from: newdate as Date)
         
         dateLabel.text = dateStr
@@ -59,17 +55,13 @@ class MoreScoreViewController: UIViewController {
     @IBAction func deleteButton(_ sender: Any) {
         let alert = UIAlertController(title: "確認", message: "データを削除しますか？", preferredStyle: UIAlertController.Style.alert)
         let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self](action: UIAlertAction!) -> Void in
-            let userId:String = try! keyChain.get("uid")!
-            //FireStore内のデータを削除
-            self.db.collection(userId).document(self.docId).delete() { err in
-                if let err = err {
-                    print("Error removing document: \(err)")
+            FirebaseManager.shared.deleteData(docId: docId, completion: { result in
+                if result == false {
+                    return
                 } else {
-                    print("Document successfully removed!")
-                    //１つ前の画面（score画面）へ遷移
-                    self.navigationController?.popViewController(animated: true)
+                    navigationController?.popViewController(animated: true)
                 }
-            }
+            })
         })
         alert.addAction(alertAction)
         alert.addAction(UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil))
@@ -77,7 +69,6 @@ class MoreScoreViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        //1つ前の画面（score画面）へ遷移
         self.navigationController?.popViewController(animated: true)
     }
     
