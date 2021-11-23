@@ -13,7 +13,7 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var dataSets = [DataSet]()
+//    var rankingData = [Ranking]()
     let keyChain = Keychain()
     let db = Firestore.firestore()
     
@@ -29,25 +29,45 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadContents()
         tableView.reloadData()
+        FirebaseManager.shared.getData { [weak self] result in
+            switch result {
+            case .success(let ranking):
+                FirebaseManager.rankingData = ranking
+//                self?.rankingData = ranking
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+//            if !rankingData.isEmpty {
+//                self?.rankingData = rankingData
+//                self?.tableView.reloadData()
+//            } else {
+//                print("There are no match users yet...")
+//            }
+        }
         //backButtonを非表示
         navigationItem.hidesBackButton = true
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSets.count
+        return FirebaseManager.rankingData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath) as! ScoreCell
         let scoreImageView = cell.contentView.viewWithTag(1) as! UIImageView
-        scoreImageView.image = UIImage(named:dataSets[indexPath.row].chiho)
+        scoreImageView.image = UIImage(named:FirebaseManager.rankingData[indexPath.row].chiho)
         let areaLabel = cell.contentView.viewWithTag(2) as! UILabel
-        areaLabel.text = dataSets[indexPath.row].chiho
+        areaLabel.text = FirebaseManager.rankingData[indexPath.row].chiho
         let scoreLabel = cell.contentView.viewWithTag(3) as! UILabel
-        scoreLabel.text = String(dataSets[indexPath.row].percent)+"%"
+        scoreLabel.text = String(FirebaseManager.rankingData[indexPath.row].percent)+"%"
         return cell
     }
     
@@ -62,10 +82,10 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //変数に情報を格納する
-        let areaLabel:String = dataSets[indexPath.row].chiho
-        let scoreLabel:Double = dataSets[indexPath.row].percent
-        let date:Double = dataSets[indexPath.row].postDate
-        let docId:String = dataSets[indexPath.row].documentId
+        let areaLabel:String = FirebaseManager.rankingData[indexPath.row].chiho
+        let scoreLabel:Double = FirebaseManager.rankingData[indexPath.row].percent
+        let date:Double = FirebaseManager.rankingData[indexPath.row].postDate
+        let docId:String = FirebaseManager.rankingData[indexPath.row].documentId
         //遷移先指定
         let vc = storyboard?.instantiateViewController(withIdentifier: "MoreScoreVC") as! MoreScoreViewController
         //MoreScoreViewControllerの変数を渡す
@@ -79,26 +99,28 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func loadContents() {
-        let loginUserId = try! keyChain.get("uid")
-        UserDefaults.standard.set(loginUserId, forKey: "uid")
-        let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
-        //Documentの取得→percentの大きい順に取得する
-        db.collection(userId).order(by: "percent", descending: true).addSnapshotListener { (snapshot, error) in
-            if error != nil {return}
-            if let snapshotDoc = snapshot?.documents {
-                self.dataSets = []
-                for document in snapshotDoc {
-                    let data = document.data()
-                    if let chiho = data["chiho"] as? String,
-                       let percent = data["percent"] as? Double,
-                       let postDate = data["postDate"] as? Double{
-                        let newDataSet = DataSet(chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
-                        self.dataSets.append(newDataSet)
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        }
+//        let rankingData = FirebaseManager.shared.getData()
+        
+        //        let loginUserId = try! keyChain.get("uid")
+        //        UserDefaults.standard.set(loginUserId, forKey: "uid")
+        //        let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
+        //        //Documentの取得→percentの大きい順に取得する
+        //        db.collection(userId).order(by: "percent", descending: true).addSnapshotListener { (snapshot, error) in
+        //            if error != nil {return}
+        //            if let snapshotDoc = snapshot?.documents {
+        //                self.dataSets = []
+        //                for document in snapshotDoc {
+        //                    let data = document.data()
+        //                    if let chiho = data["chiho"] as? String,
+        //                       let percent = data["percent"] as? Double,
+        //                       let postDate = data["postDate"] as? Double{
+        //                        let newDataSet = DataSet(chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
+        //                        self.dataSets.append(newDataSet)
+        //                        self.tableView.reloadData()
+        //                    }
+        //                }
+        //            }
+        //        }
     }
 }
 

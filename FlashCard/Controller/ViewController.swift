@@ -106,28 +106,26 @@ class ViewController: UIViewController {
     func dataSend() {
         
         if questionNamber >= 2 {
+            
             let chiho:String = chihoList.chihoList[listNumber].chihoNames
             let double1:Double = Double(correctCount)
             let double2:Double = Double(questionNamber-1)
             let percent:Double = Calculator.caluculatePercent(correctCount: double1, questionNumber: double2)
-            let postDate = Date().timeIntervalSince1970
+            let postDate:Double = Date().timeIntervalSince1970
             let userId:String = try! keyChain.get("uid")!
             let documentId = db.collection(userId).document().documentID
-            //Firestoreへscoreを送信
-            db.collection(userId).document(documentId).setData(
-                ["chiho":chiho,
-                 "percent":percent,
-                 "postDate":postDate,
-                 "documentId":documentId
-                ]
-            )
+            
+            FirebaseManager.shared.sendData(chiho: chiho, percent: percent, postDate: postDate, documentId: documentId)
+            
         } else {
             let alert = UIAlertController(title: "エラー", message: "問題を解いてください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true)
             return
         }
-            self.navigationController?.popViewController(animated: true)
+        
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     func correctCountUp() {

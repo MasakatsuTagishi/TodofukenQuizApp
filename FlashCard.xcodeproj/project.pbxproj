@@ -11,7 +11,7 @@
 		071ABCA427322B71006F11B5 /* TodofukenList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ABCA327322B71006F11B5 /* TodofukenList.swift */; };
 		071ABCA727325C86006F11B5 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ABCA627325C86006F11B5 /* Calculator.swift */; };
 		071ABCAF2733797F006F11B5 /* FlashCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ABCAE2733797F006F11B5 /* FlashCardTests.swift */; };
-		071F709226F4D102006E9B5E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F709126F4D102006E9B5E /* DatabaseManager.swift */; };
+		071F709226F4D102006E9B5E /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F709126F4D102006E9B5E /* FirebaseManager.swift */; };
 		07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C27126DE080F00C21DA5 /* SoundFile.swift */; };
 		07B1C27426DE08B900C21DA5 /* CorrectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */; };
 		07B1C27626DE08C500C21DA5 /* WrongSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */; };
@@ -24,7 +24,7 @@
 		07B1C29826EDAB0F00C21DA5 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */; };
 		07B1C29F26EDB65300C21DA5 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C29D26EDB65300C21DA5 /* ScoreCell.swift */; };
 		07B1C2A026EDB65300C21DA5 /* ScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C29E26EDB65300C21DA5 /* ScoreCell.xib */; };
-		07B1C2A226F0511200C21DA5 /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A126F0511200C21DA5 /* DataSet.swift */; };
+		07B1C2A226F0511200C21DA5 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A126F0511200C21DA5 /* Ranking.swift */; };
 		07B1C2A426F1AC7100C21DA5 /* MoreScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A326F1AC7100C21DA5 /* MoreScoreViewController.swift */; };
 		07B1C2A626F2312400C21DA5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A526F2312400C21DA5 /* TabBarViewController.swift */; };
 		07EC194226D4E68800B44A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194126D4E68800B44A55 /* AppDelegate.swift */; };
@@ -54,7 +54,7 @@
 		071ABCAC2733797E006F11B5 /* FlashCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		071ABCAE2733797F006F11B5 /* FlashCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardTests.swift; sourceTree = "<group>"; };
 		071ABCB02733797F006F11B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		071F709126F4D102006E9B5E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		071F709126F4D102006E9B5E /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		07B1C27126DE080F00C21DA5 /* SoundFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFile.swift; sourceTree = "<group>"; };
 		07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectSound.mp3; sourceTree = "<group>"; };
 		07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongSound.mp3; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		07B1C29D26EDB65300C21DA5 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
 		07B1C29E26EDB65300C21DA5 /* ScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCell.xib; sourceTree = "<group>"; };
-		07B1C2A126F0511200C21DA5 /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
+		07B1C2A126F0511200C21DA5 /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		07B1C2A326F1AC7100C21DA5 /* MoreScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreScoreViewController.swift; sourceTree = "<group>"; };
 		07B1C2A526F2312400C21DA5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		07EC193E26D4E68800B44A55 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,10 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				07B1C28726E8850100C21DA5 /* ChihoList.swift */,
-				07B1C2A126F0511200C21DA5 /* DataSet.swift */,
+				07B1C2A126F0511200C21DA5 /* Ranking.swift */,
 				071ABCA327322B71006F11B5 /* TodofukenList.swift */,
 				071ABCA627325C86006F11B5 /* Calculator.swift */,
-				071F709126F4D102006E9B5E /* DatabaseManager.swift */,
+				071F709126F4D102006E9B5E /* FirebaseManager.swift */,
+				07B1C27126DE080F00C21DA5 /* SoundFile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,7 +183,6 @@
 				071ABCA127311D5F006F11B5 /* View */,
 				071ABCA227311D69006F11B5 /* Controller */,
 				07EC194A26D4E68A00B44A55 /* Assets.xcassets */,
-				07B1C27126DE080F00C21DA5 /* SoundFile.swift */,
 				071ABC9B27310011006F11B5 /* Keychain.swift */,
 				07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */,
 				07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */,
@@ -412,9 +412,9 @@
 			files = (
 				07EC194626D4E68800B44A55 /* ViewController.swift in Sources */,
 				07B1C29826EDAB0F00C21DA5 /* ScoreViewController.swift in Sources */,
-				07B1C2A226F0511200C21DA5 /* DataSet.swift in Sources */,
+				07B1C2A226F0511200C21DA5 /* Ranking.swift in Sources */,
 				07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */,
-				071F709226F4D102006E9B5E /* DatabaseManager.swift in Sources */,
+				071F709226F4D102006E9B5E /* FirebaseManager.swift in Sources */,
 				07B1C29F26EDB65300C21DA5 /* ScoreCell.swift in Sources */,
 				07B1C2A426F1AC7100C21DA5 /* MoreScoreViewController.swift in Sources */,
 				07B1C28326E7090400C21DA5 /* AreaCell.swift in Sources */,

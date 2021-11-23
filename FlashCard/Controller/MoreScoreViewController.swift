@@ -21,7 +21,7 @@ class MoreScoreViewController: UIViewController {
     
     let db = Firestore.firestore()
     let keyChain = Keychain()
-    var dataSets = [DataSet]()
+//    var rankingData = [Ranking]()
     var scoreImage = String()
     var areaLabel = String()
     var scoreLabel = Double()
@@ -59,9 +59,7 @@ class MoreScoreViewController: UIViewController {
     @IBAction func deleteButton(_ sender: Any) {
         let alert = UIAlertController(title: "確認", message: "データを削除しますか？", preferredStyle: UIAlertController.Style.alert)
         let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self](action: UIAlertAction!) -> Void in
-            let loginUserId = try! keyChain.get("uid")
-            UserDefaults.standard.set(loginUserId, forKey: "uid")
-            let userId:String = UserDefaults.standard.value(forKey: "uid") as! String
+            let userId:String = try! keyChain.get("uid")!
             //FireStore内のデータを削除
             self.db.collection(userId).document(self.docId).delete() { err in
                 if let err = err {
