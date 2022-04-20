@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     var visible:Bool = false
     var listNumber:Int = 0
     
-    let todofukenList = AreaList()
     let soundFile = SoundFile()
     let chihoList = ChihoList()
     let keyChain = Keychain()
@@ -31,7 +30,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let random = todofukenList.allList[listNumber].randomElement()
+        let random = TodofukenList().allList[listNumber].randomElement()
         countLabel.text = "第\(questionNamber)問"
         changeVisible(visible: false)
         answerLabel.text = random?.name
@@ -75,7 +74,7 @@ class ViewController: UIViewController {
     }
     
     func nextQuestions() {
-        let random = todofukenList.allList[listNumber].randomElement()
+        let random = TodofukenList().allList[listNumber].randomElement()
         if questionNamber < 50 {
             questionNumberUp()
             countLabel.text = "第\(questionNamber)問"

@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let chihoList = ChihoList()
+    let chihoList: [String] = ["北海道・東北地方","関東地方","中部地方","近畿地方","中国・四国地方","九州・沖縄地方","47都道府県"]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,14 +29,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let areacount = chihoList.chihoList
-        return areacount.count
+        return chihoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "areaCell", for: indexPath) as! AreaCell
-        cell.areaImageView.image = UIImage(named:chihoList.chihoList[indexPath.row].chihoNames)
-        cell.areaTextLabel.text = chihoList.chihoList[indexPath.row].chihoNames
+        cell.areaImageView.image = UIImage(named:chihoList[indexPath.row])
+        cell.areaTextLabel.text = chihoList[indexPath.row]
         return cell
     }
     
