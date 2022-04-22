@@ -17,16 +17,15 @@ class FirebaseManager {
     
     let db = Firestore.firestore()
     let keyChain = Keychain()
-    static var rankingData:[Ranking] = []
-    
-    
+    static var rankingData: [Ranking] = []
+
     func sendData(chiho: String, percent: Double, postDate: Double, documentId: String) {
         let userId = try! keyChain.get("uid")!
         let rankingData = [
-            "chiho":chiho,
-            "percent":percent,
-            "postDate":postDate,
-            "documentId":documentId
+            "chiho": chiho,
+            "percent": percent,
+            "postDate": postDate,
+            "documentId": documentId
         ] as [String : Any]
         db.collection(userId).document(documentId).setData(rankingData)
     }

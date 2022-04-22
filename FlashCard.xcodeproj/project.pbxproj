@@ -119,30 +119,28 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		071ABCA127311D5F006F11B5 /* View */ = {
+		071ABCA127311D5F006F11B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				07EC194726D4E68800B44A55 /* Main.storyboard */,
 				07EC194C26D4E68A00B44A55 /* LaunchScreen.storyboard */,
 				07B1C28226E7090400C21DA5 /* AreaCell.xib */,
+				07B1C28126E7090400C21DA5 /* AreaCell.swift */,
 				07B1C29E26EDB65300C21DA5 /* ScoreCell.xib */,
+				07B1C29D26EDB65300C21DA5 /* ScoreCell.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		071ABCA227311D69006F11B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				07EC194126D4E68800B44A55 /* AppDelegate.swift */,
-				07EC194326D4E68800B44A55 /* SceneDelegate.swift */,
 				07EC194526D4E68800B44A55 /* ViewController.swift */,
 				07B1C29326ECDFA000C21DA5 /* LoginViewController.swift */,
 				07B1C2A526F2312400C21DA5 /* TabBarViewController.swift */,
 				07B1C28526E729F200C21DA5 /* HomeViewController.swift */,
 				07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */,
 				07B1C2A326F1AC7100C21DA5 /* MoreScoreViewController.swift */,
-				07B1C28126E7090400C21DA5 /* AreaCell.swift */,
-				07B1C29D26EDB65300C21DA5 /* ScoreCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -154,6 +152,14 @@
 				071ABCB02733797F006F11B5 /* Info.plist */,
 			);
 			path = FlashCardTests;
+			sourceTree = "<group>";
+		};
+		07C4A107280FD30700583654 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				071ABC9B27310011006F11B5 /* Keychain.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		07EC193526D4E68800B44A55 = {
@@ -180,12 +186,14 @@
 			isa = PBXGroup;
 			children = (
 				071ABCA027311CB1006F11B5 /* Model */,
-				071ABCA127311D5F006F11B5 /* View */,
+				071ABCA127311D5F006F11B5 /* Views */,
 				071ABCA227311D69006F11B5 /* Controller */,
-				07EC194A26D4E68A00B44A55 /* Assets.xcassets */,
-				071ABC9B27310011006F11B5 /* Keychain.swift */,
+				07C4A107280FD30700583654 /* Utils */,
+				07EC194126D4E68800B44A55 /* AppDelegate.swift */,
+				07EC194326D4E68800B44A55 /* SceneDelegate.swift */,
 				07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */,
 				07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */,
+				07EC194A26D4E68A00B44A55 /* Assets.xcassets */,
 				07EC194F26D4E68A00B44A55 /* Info.plist */,
 				07B1C28D26EC683500C21DA5 /* GoogleService-Info.plist */,
 			);
