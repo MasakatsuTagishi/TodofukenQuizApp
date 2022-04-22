@@ -6,41 +6,26 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
 
 class LoginViewController: UIViewController {
-    
-    let keyChain = Keychain()
-    private var isPlaying = false
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBAction func loginButton(_ sender: Any) {
-        
-        if isPlaying { return }
-        isPlaying = true
+    // MARK: - @IBAction
+    @IBAction func loginButton(_ sender: UIButton) {
+        sender.isEnabled = false
         registerId()
-        
     }
-    
+
+    // MARK: - Method
     func registerId() {
-        DispatchQueue.global().async {
-            //ログインidを保存
-            Auth.auth().signInAnonymously { [self] authResult, error in
-                guard let user = authResult?.user
-                else {
-                    return
-                }
-                let uid = user.uid
-                try? keyChain.set(uid, key: "uid")
-                //ホーム画面へ遷移
+        FirebaseManager.shared.registerId { result in
+            if result {
                 let tabVC = self.storyboard?.instantiateViewController(identifier: "tabVC") as! TabBarViewController
-                self.navigationController?.pushViewController(tabVC, animated: true)
+                    self.navigationController?.pushViewController(tabVC, animated: true)
+            } else {
+                return
             }
-            self.isPlaying = false
         }
     }
+
 }
 
 
