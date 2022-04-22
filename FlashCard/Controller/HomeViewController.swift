@@ -9,7 +9,15 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let chihoList: [String] = ["北海道・東北地方","関東地方","中部地方","近畿地方","中国・四国地方","九州・沖縄地方","47都道府県"]
+    let chihoList = [
+        ChihoModel(name: "北海道・東北地方", image: UIImage(named: "北海道・東北地方")!),
+        ChihoModel(name: "関東地方", image: UIImage(named: "関東地方")!),
+        ChihoModel(name: "中部地方", image: UIImage(named: "中部地方")!),
+        ChihoModel(name: "近畿地方", image: UIImage(named: "近畿地方")!),
+        ChihoModel(name: "中国・四国地方", image: UIImage(named: "中国・四国地方")!),
+        ChihoModel(name: "九州地方", image: UIImage(named: "九州地方")!),
+        ChihoModel(name: "47都道府県", image: UIImage(named: "47都道府県")!)
+    ]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,8 +42,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "areaCell", for: indexPath) as! AreaCell
-        cell.areaImageView.image = UIImage(named:chihoList[indexPath.row])
-        cell.areaTextLabel.text = chihoList[indexPath.row]
+        cell.areaImageView.image = chihoList[indexPath.row].image
+        cell.areaTextLabel.text = chihoList[indexPath.row].name
         return cell
     }
     

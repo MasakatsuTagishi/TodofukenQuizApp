@@ -16,17 +16,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //navigationBarを非表示にする
-        navigationController?.setNavigationBarHidden(true,animated:true)
-    }
-    
     @IBAction func loginButton(_ sender: Any) {
         
         if isPlaying { return }

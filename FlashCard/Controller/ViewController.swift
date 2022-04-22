@@ -22,10 +22,19 @@ class ViewController: UIViewController {
     var listNumber:Int = 0
     
     let soundFile = SoundFile()
-    let chihoList = ChihoList()
     let keyChain = Keychain()
     
     let db = Firestore.firestore()
+
+    let chihoList = [
+        ChihoModel(name: "北海道・東北地方", image: UIImage(named: "北海道・東北地方")!),
+        ChihoModel(name: "関東地方", image: UIImage(named: "関東地方")!),
+        ChihoModel(name: "中部地方", image: UIImage(named: "中部地方")!),
+        ChihoModel(name: "近畿地方", image: UIImage(named: "近畿地方")!),
+        ChihoModel(name: "中国・四国地方", image: UIImage(named: "中国・四国地方")!),
+        ChihoModel(name: "九州地方", image: UIImage(named: "九州地方")!),
+        ChihoModel(name: "47都道府県", image: UIImage(named: "47都道府県")!)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,12 +115,12 @@ class ViewController: UIViewController {
         
         if questionNamber >= 2 {
             
-            let chiho:String = chihoList.chihoList[listNumber].chihoNames
-            let double1:Double = Double(correctCount)
-            let double2:Double = Double(questionNamber-1)
-            let percent:Double = Calculator.caluculatePercent(correctCount: double1, questionNumber: double2)
-            let postDate:Double = Date().timeIntervalSince1970
-            let userId:String = try! keyChain.get("uid")!
+            let chiho: String = chihoList[listNumber].name
+            let double1: Double = Double(correctCount)
+            let double2: Double = Double(questionNamber-1)
+            let percent: Double = Calculator.caluculatePercent(correctCount: double1, questionNumber: double2)
+            let postDate: Double = Date().timeIntervalSince1970
+            let userId: String = try! keyChain.get("uid")!
             let documentId = db.collection(userId).document().documentID
             
             FirebaseManager.shared.sendData(chiho: chiho, percent: percent, postDate: postDate, documentId: documentId)

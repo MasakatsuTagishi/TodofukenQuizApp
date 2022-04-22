@@ -70,10 +70,10 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let areaLabel:String = FirebaseManager.rankingData[indexPath.row].chiho
-        let scoreLabel:Double = FirebaseManager.rankingData[indexPath.row].percent
-        let date:Double = FirebaseManager.rankingData[indexPath.row].postDate
-        let docId:String = FirebaseManager.rankingData[indexPath.row].documentId
+        let areaLabel: String = FirebaseManager.rankingData[indexPath.row].chiho
+        let scoreLabel: Double = FirebaseManager.rankingData[indexPath.row].percent
+        let date: Double = FirebaseManager.rankingData[indexPath.row].postDate
+        let docId: String = FirebaseManager.rankingData[indexPath.row].documentId
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "MoreScoreVC") as! MoreScoreViewController
         vc.areaLabel = areaLabel
