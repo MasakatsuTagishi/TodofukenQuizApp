@@ -42,8 +42,7 @@ class FirebaseManager {
         db.collection(userId).document(documentId).setData(rankingData)
     }
     
-    
-    func getData(completion: @escaping (Result<[Ranking], Error>) -> Void) {
+    func fetchData(completion: @escaping (Result<[Ranking], Error>) -> Void) {
         let userId = try! keyChain.get("uid")!
         db.collection(userId).order(by: "percent", descending: true).addSnapshotListener { querySnapshot, error in
             if let error = error {
