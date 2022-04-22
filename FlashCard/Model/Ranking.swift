@@ -6,8 +6,8 @@
 //
 
 struct Ranking {
-    let chiho:String
-    let percent:Double
-    let postDate:Double
-    let documentId:String
+    let chiho: String
+    let percent: Double
+    let postDate: Double
+    let documentId: String
 }
