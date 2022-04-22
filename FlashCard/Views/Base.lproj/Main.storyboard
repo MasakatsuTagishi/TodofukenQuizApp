@@ -36,7 +36,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="wrongButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WUh-gB-dG9"/>
+                                    <action selector="wrongButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3PO-gJ-yZ6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIf-dd-qE7">
@@ -55,7 +55,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="sendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ctm-H1-xqj"/>
+                                    <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xAg-ef-oFz"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7WQ-Ja-Cqw">
@@ -78,7 +78,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="correctButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ecc-T1-qM2"/>
+                                    <action selector="correctButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2p4-Cm-VpI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="答え" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWa-zH-4lv">
@@ -122,14 +122,14 @@
                     <navigationItem key="navigationItem" title="フラッシュカード" id="b4w-QK-K87"/>
                     <connections>
                         <outlet property="answerLabel" destination="xWa-zH-4lv" id="5Ut-2H-M9Y"/>
-                        <outlet property="countLabel" destination="C64-fr-wYm" id="ihO-2W-PMk"/>
                         <outlet property="imageView" destination="7WQ-Ja-Cqw" id="FPd-bv-vNE"/>
+                        <outlet property="questionNumberLabel" destination="C64-fr-wYm" id="ihO-2W-PMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="izy-uS-zKy">
                     <connections>
-                        <action selector="answerSwitching:" destination="BYZ-38-t0r" id="Bjg-aW-7DY"/>
+                        <action selector="imageViewTaped:" destination="BYZ-38-t0r" id="noN-cd-inW"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
