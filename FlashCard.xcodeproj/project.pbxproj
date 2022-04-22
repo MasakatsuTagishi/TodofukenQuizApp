@@ -27,6 +27,7 @@
 		07B1C2A226F0511200C21DA5 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A126F0511200C21DA5 /* Ranking.swift */; };
 		07B1C2A426F1AC7100C21DA5 /* MoreScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A326F1AC7100C21DA5 /* MoreScoreViewController.swift */; };
 		07B1C2A626F2312400C21DA5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A526F2312400C21DA5 /* TabBarViewController.swift */; };
+		07C4A11328126B2500583654 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4A11228126B2500583654 /* Alert.swift */; };
 		07EC194226D4E68800B44A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194126D4E68800B44A55 /* AppDelegate.swift */; };
 		07EC194426D4E68800B44A55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194326D4E68800B44A55 /* SceneDelegate.swift */; };
 		07EC194626D4E68800B44A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194526D4E68800B44A55 /* ViewController.swift */; };
@@ -70,6 +71,7 @@
 		07B1C2A126F0511200C21DA5 /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		07B1C2A326F1AC7100C21DA5 /* MoreScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreScoreViewController.swift; sourceTree = "<group>"; };
 		07B1C2A526F2312400C21DA5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		07C4A11228126B2500583654 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		07EC193E26D4E68800B44A55 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC194126D4E68800B44A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07EC194326D4E68800B44A55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				071F709126F4D102006E9B5E /* FirebaseManager.swift */,
 				071ABCA627325C86006F11B5 /* Calculator.swift */,
 				07B1C27126DE080F00C21DA5 /* SoundFile.swift */,
+				07C4A11228126B2500583654 /* Alert.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C4A11328126B2500583654 /* Alert.swift in Sources */,
 				07EC194626D4E68800B44A55 /* ViewController.swift in Sources */,
 				07B1C29826EDAB0F00C21DA5 /* ScoreViewController.swift in Sources */,
 				07B1C2A226F0511200C21DA5 /* Ranking.swift in Sources */,

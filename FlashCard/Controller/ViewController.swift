@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     let soundFile = SoundFile()
     let keyChain = Keychain()
+    let alert = Alert()
     
     let db = Firestore.firestore()
 
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        alert.delegate = self
         let random = TodofukenList().allList[listNumber].randomElement()
         countLabel.text = "第\(questionNamber)問"
         changeVisible(visible: false)
@@ -92,14 +93,9 @@ class ViewController: UIViewController {
             visible = false
         } else {
             questionNumberUp()
-            //アラートを出す
-            let alert = UIAlertController(title: "終了", message: "問題は50問までです。", preferredStyle: UIAlertController.Style.alert)
-            let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) -> Void in
-                print("問題が終了しました")
-                self.dataSend()
-            })
-            alert.addAction(alertAction)
-            present(alert, animated: true, completion: nil)
+            alert.endAlert(title: "終了", message: "問題は50問までです。") { [weak self] _ in
+                self?.dataSend()
+            }
         }
     }
     
@@ -126,9 +122,7 @@ class ViewController: UIViewController {
             FirebaseManager.shared.sendData(chiho: chiho, percent: percent, postDate: postDate, documentId: documentId)
             
         } else {
-            let alert = UIAlertController(title: "エラー", message: "問題を解いてください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            alert.errorAlert(title: "エラー", message: "問題を解いてください。")
             return
         }
         
@@ -146,3 +140,9 @@ class ViewController: UIViewController {
     
 }
 
+//MARK: - AlertDelegate
+extension ViewController: AlertDelegate {
+    func present(alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
+    }
+}
