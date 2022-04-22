@@ -48,7 +48,7 @@ extension HomeViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         let vc = storyboard?.instantiateViewController(withIdentifier: "ViewVC") as! ViewController
-        vc.listNumber = indexPath.row
+        vc.indexNum = indexPath.row
         navigationController?.pushViewController(vc, animated: true)
     }
 }
