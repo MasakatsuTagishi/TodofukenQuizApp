@@ -15,6 +15,7 @@ class MoreScoreViewController: UIViewController {
 
     // MARK: - Instance
     var rankingData = Ranking(chiho: "", percent: 0.0, postDate: 0.0, documentId: "")
+    let alert = Alert()
 
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class MoreScoreViewController: UIViewController {
         areaNameLabel.text = rankingData.chiho
         percentLabel.text = String(rankingData.percent)+"%"
         self.tabBarController?.tabBar.isHidden = true
+        alert.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,19 +34,9 @@ class MoreScoreViewController: UIViewController {
     
     // MARK: - @IBAction
     @IBAction func deleteButton(_ sender: UIButton) {
-        let alert = UIAlertController(title: "確認", message: "データを削除しますか？", preferredStyle: UIAlertController.Style.alert)
-        let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self](action: UIAlertAction!) -> Void in
-            FirebaseManager.shared.deleteData(docId: rankingData.documentId, completion: { result in
-                if result == false {
-                    return
-                } else {
-                    self.navigationController?.popViewController(animated: true)
-                }
-            })
-        })
-        alert.addAction(alertAction)
-        alert.addAction(UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
+        alert.deleteAlert(title: "確認", message: "データを削除しますか？") { [weak self] _ in
+            self?.deleteData(docId: self?.rankingData.documentId ?? "")
+        }
     }
     
     @IBAction func backButton(_ sender: UIButton) {
@@ -61,4 +53,21 @@ class MoreScoreViewController: UIViewController {
         return dateStr
     }
 
+    func deleteData(docId: String) {
+        FirebaseManager.shared.deleteData(docId: docId) { result in
+            if result {
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                return
+            }
+        }
+    }
+
+}
+
+//MARK: - AlertDelegate
+extension MoreScoreViewController: AlertDelegate {
+    func present(alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
+    }
 }
