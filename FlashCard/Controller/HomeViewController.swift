@@ -18,8 +18,10 @@ class HomeViewController: UIViewController {
         ChihoModel(name: "九州地方", image: UIImage(named: "九州地方")!),
         ChihoModel(name: "47都道府県", image: UIImage(named: "47都道府県")!)
     ]
+
     // MARK: - @IBOutlet
     @IBOutlet weak var tableView: UITableView!
+
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,7 @@ class HomeViewController: UIViewController {
     }
 
 }
+
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
