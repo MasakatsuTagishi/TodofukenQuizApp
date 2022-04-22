@@ -18,7 +18,7 @@
 		07B1C28326E7090400C21DA5 /* AreaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28126E7090400C21DA5 /* AreaCell.swift */; };
 		07B1C28426E7090400C21DA5 /* AreaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C28226E7090400C21DA5 /* AreaCell.xib */; };
 		07B1C28626E729F200C21DA5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28526E729F200C21DA5 /* HomeViewController.swift */; };
-		07B1C28826E8850100C21DA5 /* ChihoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28726E8850100C21DA5 /* ChihoList.swift */; };
+		07B1C28826E8850100C21DA5 /* Chiho.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28726E8850100C21DA5 /* Chiho.swift */; };
 		07B1C28E26EC683500C21DA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C28D26EC683500C21DA5 /* GoogleService-Info.plist */; };
 		07B1C29426ECDFA000C21DA5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C29326ECDFA000C21DA5 /* LoginViewController.swift */; };
 		07B1C29826EDAB0F00C21DA5 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */; };
@@ -61,7 +61,7 @@
 		07B1C28126E7090400C21DA5 /* AreaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCell.swift; sourceTree = "<group>"; };
 		07B1C28226E7090400C21DA5 /* AreaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaCell.xib; sourceTree = "<group>"; };
 		07B1C28526E729F200C21DA5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		07B1C28726E8850100C21DA5 /* ChihoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChihoList.swift; sourceTree = "<group>"; };
+		07B1C28726E8850100C21DA5 /* Chiho.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chiho.swift; sourceTree = "<group>"; };
 		07B1C28D26EC683500C21DA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07B1C29326ECDFA000C21DA5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		07B1C29726EDAB0F00C21DA5 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
@@ -109,12 +109,9 @@
 		071ABCA027311CB1006F11B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				07B1C28726E8850100C21DA5 /* ChihoList.swift */,
+				07B1C28726E8850100C21DA5 /* Chiho.swift */,
 				07B1C2A126F0511200C21DA5 /* Ranking.swift */,
 				071ABCA327322B71006F11B5 /* TodofukenList.swift */,
-				071ABCA627325C86006F11B5 /* Calculator.swift */,
-				071F709126F4D102006E9B5E /* FirebaseManager.swift */,
-				07B1C27126DE080F00C21DA5 /* SoundFile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				071ABC9B27310011006F11B5 /* Keychain.swift */,
+				071F709126F4D102006E9B5E /* FirebaseManager.swift */,
+				071ABCA627325C86006F11B5 /* Calculator.swift */,
+				07B1C27126DE080F00C21DA5 /* SoundFile.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -431,7 +431,7 @@
 				071ABC9C27310011006F11B5 /* Keychain.swift in Sources */,
 				071ABCA427322B71006F11B5 /* TodofukenList.swift in Sources */,
 				07EC194226D4E68800B44A55 /* AppDelegate.swift in Sources */,
-				07B1C28826E8850100C21DA5 /* ChihoList.swift in Sources */,
+				07B1C28826E8850100C21DA5 /* Chiho.swift in Sources */,
 				07EC194426D4E68800B44A55 /* SceneDelegate.swift in Sources */,
 				071ABCA727325C86006F11B5 /* Calculator.swift in Sources */,
 				07B1C29426ECDFA000C21DA5 /* LoginViewController.swift in Sources */,
