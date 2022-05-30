@@ -6,15 +6,12 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseFirestore
 
-class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class ScoreViewController: UIViewController {
+    // MARK: - @IBOutlet
     @IBOutlet weak var tableView: UITableView!
-    
-    let keyChain = Keychain()
-    
+
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -26,7 +23,14 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-        FirebaseManager.shared.getData { [weak self] result in
+        fetchData()
+        navigationItem.hidesBackButton = true
+        self.tabBarController?.tabBar.isHidden = false
+    }
+
+    // MARK: - Method
+    func fetchData() {
+        FirebaseManager.shared.fetchData { [weak self] result in
             switch result {
             case .success(let ranking):
                 FirebaseManager.rankingData = ranking
@@ -35,19 +39,31 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 print(error.localizedDescription)
             }
         }
-        navigationItem.hidesBackButton = true
-        self.tabBarController?.tabBar.isHidden = false
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+
+}
+
+// MARK: - UITableViewDelegate
+extension ScoreViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let rankingData = FirebaseManager.rankingData[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MoreScoreVC") as! MoreScoreViewController
+        vc.rankingData = rankingData
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension ScoreViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FirebaseManager.rankingData.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath) as! ScoreCell
         let scoreImageView = cell.contentView.viewWithTag(1) as! UIImageView
@@ -58,31 +74,8 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         scoreLabel.text = String(FirebaseManager.rankingData[indexPath.row].percent)+"%"
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        let areaLabel: String = FirebaseManager.rankingData[indexPath.row].chiho
-        let scoreLabel: Double = FirebaseManager.rankingData[indexPath.row].percent
-        let date: Double = FirebaseManager.rankingData[indexPath.row].postDate
-        let docId: String = FirebaseManager.rankingData[indexPath.row].documentId
-        
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MoreScoreVC") as! MoreScoreViewController
-        vc.areaLabel = areaLabel
-        vc.scoreLabel = scoreLabel
-        vc.date = date
-        vc.docId = docId
-
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
 }
-

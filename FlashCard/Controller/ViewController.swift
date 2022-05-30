@@ -12,19 +12,16 @@ import FirebaseAuth
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var questionNumberLabel: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
-    var questionNamber = 1
-    var correctCount = 0
-    var visible:Bool = false
-    var listNumber:Int = 0
-    
-    let soundFile = SoundFile()
+
+    // MARK: - Properties
+    var indexNum: Int = 0
+    var correctCount: Double = 0
+    var questionNumber: Int = 1
+    let alert = Alert()
     let keyChain = Keychain()
-    
-    let db = Firestore.firestore()
 
     let chihoList = [
         ChihoModel(name: "北海道・東北地方", image: UIImage(named: "北海道・東北地方")!),
@@ -35,114 +32,119 @@ class ViewController: UIViewController {
         ChihoModel(name: "九州地方", image: UIImage(named: "九州地方")!),
         ChihoModel(name: "47都道府県", image: UIImage(named: "47都道府県")!)
     ]
-    
+
+    // MARK: - LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let random = TodofukenList().allList[listNumber].randomElement()
-        countLabel.text = "第\(questionNamber)問"
-        changeVisible(visible: false)
-        answerLabel.text = random?.name
-        imageView.image = random?.image
+        upDateUI()
+        alert.delegate = self
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    @IBAction func answerSwitching(_ sender: Any) {
-        if visible {
-            visible = false
-            changeVisible(visible: visible)
-        }else{
-            visible = true
-            changeVisible(visible: visible)
-        }
+    @IBAction func imageViewTaped(_ sender: UITapGestureRecognizer) {
+        answerLabel.isHidden.toggle()
     }
     
-    @IBAction func wrongButton(_ sender: Any) {
-        soundFile.playSound(fileName: "WrongSound", extentionName: "mp3")
-        nextQuestions()
-        changeVisible(visible: false)
+    @IBAction func wrongButtonPressed(_ sender: UIButton) {
+        roundCrossSound(fileName: "WrongSound", extentionName: "mp3")
+        nextQuestion()
     }
     
-    @IBAction func correctButton(_ sender: Any) {
-        if correctCount <= 49 {
-            correctCountUp()
-            soundFile.playSound(fileName: "CorrectSound", extentionName: "mp3")
-            nextQuestions()
-            changeVisible(visible: false)
+    @IBAction func correctButtonPressed(_ sender: UIButton) {
+        let maxCount: Double = 50
+        if correctCount <= maxCount - 1 {
+            correctCount = countUp(count: Int(correctCount), addCount: 1)
+            roundCrossSound(fileName: "CorrectSound", extentionName: "mp3")
+            nextQuestion()
         } else {
+            sender.isEnabled = false
             return
         }
     }
     
-    @IBAction func sendButton(_ sender: Any) {
-        dataSend()
+    @IBAction func sendButtonPressed(_ sender: Any) {
+        sendRankingData()
     }
     
-    func nextQuestions() {
-        let random = TodofukenList().allList[listNumber].randomElement()
-        if questionNamber < 50 {
-            questionNumberUp()
-            countLabel.text = "第\(questionNamber)問"
-            imageView.image = random?.image
-            answerLabel.text = random?.name
-            visible = false
-        } else {
-            questionNumberUp()
-            //アラートを出す
-            let alert = UIAlertController(title: "終了", message: "問題は50問までです。", preferredStyle: UIAlertController.Style.alert)
-            let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) -> Void in
-                print("問題が終了しました")
-                self.dataSend()
-            })
-            alert.addAction(alertAction)
-            present(alert, animated: true, completion: nil)
+    // MARK: - Methods
+    private func upDateUI() {
+        let todofukenList = TodofukenList()
+        let random = todofukenList.allList[indexNum].randomElement()
+        DispatchQueue.main.async {
+            self.questionNumberLabel.text = "第\(self.questionNumber)問"
+            self.answerLabel.text = random?.name
+            self.answerLabel.isHidden = true
+            self.imageView.image = random?.image
         }
     }
-    
-    func changeVisible(visible: Bool) {
-        if visible {
-            answerLabel.isHidden = false
+
+    private func nextQuestion() {
+        let maxCount: Int = 50
+        questionNumber = Int(countUp(count: questionNumber, addCount: 1))
+        if questionNumber < maxCount {
+            upDateUI()
         } else {
-            answerLabel.isHidden = true
+            endAlert()
         }
     }
-    
-    func dataSend() {
-        
-        if questionNamber >= 2 {
-            
-            let chiho: String = chihoList[listNumber].name
-            let double1: Double = Double(correctCount)
-            let double2: Double = Double(questionNamber-1)
-            let percent: Double = Calculator.caluculatePercent(correctCount: double1, questionNumber: double2)
-            let postDate: Double = Date().timeIntervalSince1970
-            let userId: String = try! keyChain.get("uid")!
-            let documentId = db.collection(userId).document().documentID
-            
-            FirebaseManager.shared.sendData(chiho: chiho, percent: percent, postDate: postDate, documentId: documentId)
-            
+
+    private func countUp(count: Int, addCount: Double) -> Double {
+        return Double(count) + addCount
+    }
+
+    private func caluculatePercent(_ correctCount: Double, _ questionNumber: Double) -> Double {
+        return round((correctCount/questionNumber)*1000)/10
+    }
+
+    private func endAlert() {
+        alert.endAlert(title: "終了", message: "問題は50問までです。") { [weak self] _ in
+            self?.sendRankingData()
+        }
+    }
+
+    private func errorAlert() {
+        alert.errorAlert(title: "エラー", message: "問題を解いてください")
+    }
+
+    private func roundCrossSound(fileName: String, extentionName: String) {
+        let soundFile = SoundFile()
+        soundFile.playSound(fileName: fileName, extentionName: extentionName)
+    }
+
+    private func sendRankingData() {
+        let minCount: Int = 2
+        if questionNumber >= minCount {
+            setRankingDataToFirestore()
         } else {
-            let alert = UIAlertController(title: "エラー", message: "問題を解いてください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            errorAlert()
             return
         }
-        
-        self.navigationController?.popViewController(animated: true)
-        
+        backViewContller()
     }
-    
-    func correctCountUp() {
-        correctCount = Calculator.countUp(count: correctCount, addCount: 1)
+
+    private func setRankingDataToFirestore() {
+        let db = Firestore.firestore()
+        let chiho: String = chihoList[indexNum].name
+        let percent: Double = caluculatePercent(correctCount, Double(questionNumber - 1))
+        let postDate: Double = Date().timeIntervalSince1970
+        let userId: String = try! keyChain.get("uid")!
+        let documentId = db.collection(userId).document().documentID
+        FirebaseManager.shared.sendData(chiho: chiho, percent: percent, postDate: postDate, documentId: documentId)
     }
-    
-    func questionNumberUp() {
-        questionNamber = Calculator.countUp(count: questionNamber, addCount: 1)
+
+    private func backViewContller() {
+        navigationController?.popViewController(animated: true)
     }
     
 }
 
+//MARK: - AlertDelegate
+extension ViewController: AlertDelegate {
+    func present(alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
+    }
+}

@@ -14,10 +14,22 @@ class FirebaseManager {
     
     static let shared = FirebaseManager()
     private init() {}
-    
+
     let db = Firestore.firestore()
     let keyChain = Keychain()
     static var rankingData: [Ranking] = []
+
+    func registerId(completion: @escaping(Bool) -> Void){
+        Auth.auth().signInAnonymously { [self] authResult, error in
+            guard let user = authResult?.user
+            else {
+                return
+            }
+            let uid = user.uid
+            try? keyChain.set(uid, key: "uid")
+            completion(true)
+        }
+    }
 
     func sendData(chiho: String, percent: Double, postDate: Double, documentId: String) {
         let userId = try! keyChain.get("uid")!
@@ -30,8 +42,7 @@ class FirebaseManager {
         db.collection(userId).document(documentId).setData(rankingData)
     }
     
-    
-    func getData(completion: @escaping (Result<[Ranking], Error>) -> Void) {
+    func fetchData(completion: @escaping (Result<[Ranking], Error>) -> Void) {
         let userId = try! keyChain.get("uid")!
         db.collection(userId).order(by: "percent", descending: true).addSnapshotListener { querySnapshot, error in
             if let error = error {
@@ -44,7 +55,7 @@ class FirebaseManager {
                     let data = document.data()
                     if let chiho = data["chiho"] as? String,
                        let percent = data["percent"] as? Double,
-                       let postDate = data["postDate"] as? Double{
+                       let postDate = data["postDate"] as? Double {
                         let newRanking = Ranking(chiho: chiho, percent: percent, postDate: postDate, documentId: document.documentID)
                         FirebaseManager.rankingData.append(newRanking)
                         completion(.success(FirebaseManager.rankingData))
