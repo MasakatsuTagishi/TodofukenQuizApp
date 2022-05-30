@@ -15,8 +15,6 @@
 		07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C27126DE080F00C21DA5 /* SoundFile.swift */; };
 		07B1C27426DE08B900C21DA5 /* CorrectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */; };
 		07B1C27626DE08C500C21DA5 /* WrongSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */; };
-		07B1C28326E7090400C21DA5 /* AreaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28126E7090400C21DA5 /* AreaCell.swift */; };
-		07B1C28426E7090400C21DA5 /* AreaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C28226E7090400C21DA5 /* AreaCell.xib */; };
 		07B1C28626E729F200C21DA5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28526E729F200C21DA5 /* HomeViewController.swift */; };
 		07B1C28826E8850100C21DA5 /* Chiho.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C28726E8850100C21DA5 /* Chiho.swift */; };
 		07B1C28E26EC683500C21DA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B1C28D26EC683500C21DA5 /* GoogleService-Info.plist */; };
@@ -27,6 +25,8 @@
 		07B1C2A226F0511200C21DA5 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A126F0511200C21DA5 /* Ranking.swift */; };
 		07B1C2A426F1AC7100C21DA5 /* MoreScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A326F1AC7100C21DA5 /* MoreScoreViewController.swift */; };
 		07B1C2A626F2312400C21DA5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1C2A526F2312400C21DA5 /* TabBarViewController.swift */; };
+		07B264DE28408F8E008243D1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B264DC28408F8E008243D1 /* CustomCell.swift */; };
+		07B264DF28408F8E008243D1 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B264DD28408F8E008243D1 /* CustomCell.xib */; };
 		07C4A11328126B2500583654 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4A11228126B2500583654 /* Alert.swift */; };
 		07EC194226D4E68800B44A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194126D4E68800B44A55 /* AppDelegate.swift */; };
 		07EC194426D4E68800B44A55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC194326D4E68800B44A55 /* SceneDelegate.swift */; };
@@ -59,8 +59,6 @@
 		07B1C27126DE080F00C21DA5 /* SoundFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundFile.swift; sourceTree = "<group>"; };
 		07B1C27326DE08B900C21DA5 /* CorrectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectSound.mp3; sourceTree = "<group>"; };
 		07B1C27526DE08C500C21DA5 /* WrongSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongSound.mp3; sourceTree = "<group>"; };
-		07B1C28126E7090400C21DA5 /* AreaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCell.swift; sourceTree = "<group>"; };
-		07B1C28226E7090400C21DA5 /* AreaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaCell.xib; sourceTree = "<group>"; };
 		07B1C28526E729F200C21DA5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		07B1C28726E8850100C21DA5 /* Chiho.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chiho.swift; sourceTree = "<group>"; };
 		07B1C28D26EC683500C21DA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -71,6 +69,8 @@
 		07B1C2A126F0511200C21DA5 /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		07B1C2A326F1AC7100C21DA5 /* MoreScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreScoreViewController.swift; sourceTree = "<group>"; };
 		07B1C2A526F2312400C21DA5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		07B264DC28408F8E008243D1 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		07B264DD28408F8E008243D1 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		07C4A11228126B2500583654 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		07EC193E26D4E68800B44A55 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC194126D4E68800B44A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,9 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				07EC194726D4E68800B44A55 /* Main.storyboard */,
+				07B264DC28408F8E008243D1 /* CustomCell.swift */,
+				07B264DD28408F8E008243D1 /* CustomCell.xib */,
 				07EC194C26D4E68A00B44A55 /* LaunchScreen.storyboard */,
-				07B1C28226E7090400C21DA5 /* AreaCell.xib */,
-				07B1C28126E7090400C21DA5 /* AreaCell.swift */,
 				07B1C29E26EDB65300C21DA5 /* ScoreCell.xib */,
 				07B1C29D26EDB65300C21DA5 /* ScoreCell.swift */,
 			);
@@ -316,8 +316,8 @@
 			files = (
 				07B1C27426DE08B900C21DA5 /* CorrectSound.mp3 in Resources */,
 				07EC194E26D4E68A00B44A55 /* LaunchScreen.storyboard in Resources */,
+				07B264DF28408F8E008243D1 /* CustomCell.xib in Resources */,
 				07B1C2A026EDB65300C21DA5 /* ScoreCell.xib in Resources */,
-				07B1C28426E7090400C21DA5 /* AreaCell.xib in Resources */,
 				07EC194B26D4E68A00B44A55 /* Assets.xcassets in Resources */,
 				07EC194926D4E68800B44A55 /* Main.storyboard in Resources */,
 				07B1C28E26EC683500C21DA5 /* GoogleService-Info.plist in Resources */,
@@ -425,11 +425,11 @@
 				07EC194626D4E68800B44A55 /* ViewController.swift in Sources */,
 				07B1C29826EDAB0F00C21DA5 /* ScoreViewController.swift in Sources */,
 				07B1C2A226F0511200C21DA5 /* Ranking.swift in Sources */,
+				07B264DE28408F8E008243D1 /* CustomCell.swift in Sources */,
 				07B1C27226DE080F00C21DA5 /* SoundFile.swift in Sources */,
 				071F709226F4D102006E9B5E /* FirebaseManager.swift in Sources */,
 				07B1C29F26EDB65300C21DA5 /* ScoreCell.swift in Sources */,
 				07B1C2A426F1AC7100C21DA5 /* MoreScoreViewController.swift in Sources */,
-				07B1C28326E7090400C21DA5 /* AreaCell.swift in Sources */,
 				07B1C28626E729F200C21DA5 /* HomeViewController.swift in Sources */,
 				07B1C2A626F2312400C21DA5 /* TabBarViewController.swift in Sources */,
 				071ABC9C27310011006F11B5 /* Keychain.swift in Sources */,

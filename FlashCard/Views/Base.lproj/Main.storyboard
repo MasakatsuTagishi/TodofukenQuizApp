@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -143,41 +144,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jOK-da-jo6">
-                                <rect key="frame" x="0.0" y="127.5" width="414" height="685.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="areaCell" rowHeight="92" id="tF8-XM-3oX" customClass="AreaCell" customModule="FlashCard">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="92"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tF8-XM-3oX" id="2zD-oX-ogQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地方を選択してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiY-Cy-qR3">
                                 <rect key="frame" x="111.5" y="98" width="191" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hra-xh-f3Q">
+                                <rect key="frame" x="15" y="277" width="384" height="619"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aP9-Nt-l9d">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCell" id="sFY-eT-Ya2">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n6M-br-uS4">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="study" translatesAutoresizingMaskIntoConstraints="NO" id="zPM-j5-vC6">
+                                <rect key="frame" x="87" y="139" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="CQP-vb-Esh"/>
+                                    <constraint firstAttribute="height" constant="128" id="ms1-zL-bG1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qKw-fG-PKD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="Hra-xh-f3Q" firstAttribute="trailing" secondItem="qKw-fG-PKD" secondAttribute="trailing" constant="-15" id="6Q6-go-bmW"/>
+                            <constraint firstItem="zPM-j5-vC6" firstAttribute="top" secondItem="hiY-Cy-qR3" secondAttribute="bottom" constant="20" id="CI2-dS-OUE"/>
                             <constraint firstItem="hiY-Cy-qR3" firstAttribute="top" secondItem="qKw-fG-PKD" secondAttribute="top" constant="10" id="Med-bq-ihi"/>
-                            <constraint firstItem="jOK-da-jo6" firstAttribute="trailing" secondItem="qKw-fG-PKD" secondAttribute="trailing" id="PK4-MC-LHc"/>
-                            <constraint firstItem="jOK-da-jo6" firstAttribute="leading" secondItem="qKw-fG-PKD" secondAttribute="leading" id="ar8-px-kGQ"/>
-                            <constraint firstItem="jOK-da-jo6" firstAttribute="bottom" secondItem="qKw-fG-PKD" secondAttribute="bottom" id="ayW-Wz-1CW"/>
-                            <constraint firstItem="jOK-da-jo6" firstAttribute="top" secondItem="hiY-Cy-qR3" secondAttribute="bottom" constant="8.5" id="hJd-8a-5W5"/>
+                            <constraint firstItem="zPM-j5-vC6" firstAttribute="centerX" secondItem="eTH-0n-GWV" secondAttribute="centerX" id="Y8m-Fo-lye"/>
                             <constraint firstItem="hiY-Cy-qR3" firstAttribute="centerX" secondItem="eTH-0n-GWV" secondAttribute="centerX" id="kNP-R0-laI"/>
+                            <constraint firstItem="Hra-xh-f3Q" firstAttribute="top" secondItem="zPM-j5-vC6" secondAttribute="bottom" constant="10" id="xgg-ni-P4R"/>
+                            <constraint firstItem="Hra-xh-f3Q" firstAttribute="leading" secondItem="qKw-fG-PKD" secondAttribute="leading" constant="15" id="yug-8H-iai"/>
+                            <constraint firstAttribute="bottom" secondItem="Hra-xh-f3Q" secondAttribute="bottom" id="zjO-1j-qIs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ホーム" id="HXv-KM-30K"/>
                     <connections>
-                        <outlet property="tableView" destination="jOK-da-jo6" id="19w-RJ-f6f"/>
+                        <outlet property="collectionView" destination="Hra-xh-f3Q" id="Oo4-xe-olk"/>
                         <segue destination="BYZ-38-t0r" kind="show" id="5gL-3E-CU8"/>
                     </connections>
                 </viewController>
@@ -422,6 +445,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="systemYellowColor"/>
                         <color key="barTintColor" systemColor="systemYellowColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -457,10 +486,14 @@
         <image name="47都道府県" width="2048" height="2048"/>
         <image name="crown" catalog="system" width="128" height="92"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="study" width="3510" height="2946"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
